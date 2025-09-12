@@ -1,28 +1,36 @@
 import type { Route } from "./+types/home";
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import IndustryImg from "@/public/industryImg.jpg";
+import { AboutSection } from "~/components/sections/about";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Nabeto Engineering Limited" },
+    {
+      name: "description",
+      content:
+        "NABETO Engineering Limited is an engineering, procurement,installation,construction,operation and maintanance (EPICOM) company in oil and gas industry.",
+    },
   ];
 }
 
 export default function Home() {
   return (
-    <section className="relative bg-gradient-to-br from-background to-muted py-20 lg:py-32">
+    <section className="relative bg-gradient-to-br from-background to-muted py-16 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-                Engineering Excellence in <span className="text-primary">Every Project</span>
+                Engineering Excellence in{" "}
+                <span className="text-primary">Every Project</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed text-pretty">
-                Comprehensive EPCM solutions delivering world-class engineering, procurement, construction, operation,
-                and maintenance services for industrial projects worldwide.
+                Comprehensive EPCM solutions delivering world-class engineering,
+                procurement, construction, operation, and maintenance services
+                for industrial projects worldwide.
               </p>
             </div>
 
@@ -42,7 +50,10 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 Explore Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -60,7 +71,7 @@ export default function Home() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted border border-border">
               <img
-                src="/industrial-construction-site-with-cranes-and-moder.jpg"
+                src={IndustryImg}
                 alt="Industrial construction site showcasing EPCM capabilities"
                 className="w-full h-full object-cover"
               />
@@ -70,18 +81,25 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Projects Completed</div>
+                  <div className="text-sm text-muted-foreground">
+                    Projects Completed
+                  </div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary">50+</div>
-                  <div className="text-sm text-muted-foreground">Countries Served</div>
+                  <div className="text-sm text-muted-foreground">
+                    Countries Served
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div className="my-16 lg:my-32">
+        {/* About Section */}
+        <AboutSection />
+      </div>
     </section>
-  )
-;
+  );
 }

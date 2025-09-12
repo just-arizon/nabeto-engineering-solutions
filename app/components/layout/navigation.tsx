@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "react-router"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Building2 } from "lucide-react"
@@ -23,7 +23,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Building2 className="h-8 w-8 text-primary" />
-            <span className="font-bold text-xl text-foreground">EPCM Solutions</span>
+            <span className="font-bold text-xl text-foreground">Nabeto</span>
           </Link>
 
           {/* Desktop Navigation */}
