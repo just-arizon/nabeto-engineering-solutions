@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import IndustryImg from "../public/industryImg.jpg";
+// import IndustryImg from "@/public/industryImg.jpg";
 import { AboutSection } from "~/components/sections/about";
 import { ServiceSection } from "~/components/sections/services";
 
@@ -18,13 +18,13 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   const companies = [
-    { name: "Total", logo: "../public/logos/total-logo.svg" },
+    { name: "Total", logo: "/logos/total-logo.svg" },
     // { name: "Conoil", logo: "/logos/conoil.png" },
-    { name: "Sahara", logo: "../public//logos/sahara-logo.svg" },
-    { name: "Mobil", logo: "../public/logos/mobil-logo.svg" },
-    { name: "Pinnacle", logo: "../public/logos/pinnacle-logo.svg" },
-    { name: "Oando", logo: "../public/logos/Oando_logo.svg" },
-    { name: "Nipco", logo: "../public/logos/Nipco-logo.svg" },
+    { name: "Sahara", logo: "/logos/sahara-logo.svg" },
+    { name: "Mobil", logo: "/logos/mobil-logo.svg" },
+    { name: "Pinnacle", logo: "/logos/pinnacle-logo.svg" },
+    { name: "Oando", logo: "/logos/Oando_logo.svg" },
+    { name: "Nipco", logo: "/logos/Nipco-logo.svg" },
   ];
 
   return (
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted border border-border">
               <img
-                src={IndustryImg}
+                src="/industryImg.jpg"
                 alt="Industrial construction site showcasing EPCM capabilities"
                 className="w-full h-full object-cover"
               />

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import storyImg from "../public/storyImg.jpg";
+// import storyImg from "../public/storyImg.jpg";
 
 export function AboutSection() {
   return (
@@ -31,7 +31,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-border">
               <img
-                src={ storyImg }
+                src="/storyImg.jpg"
                 alt="EPCM Solutions company history and milestones"
                 className="w-full h-full object-cover"
               />
