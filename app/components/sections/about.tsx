@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import storyImg from "../public/storyImg.jpg";
 
 export function AboutSection() {
   return (
@@ -18,20 +19,6 @@ export function AboutSection() {
                 experiences with an average technical and management experience
                 of above 20 years in the oil and gas service industry.
               </p>
-              <p>
-                Over the decades, we have grown into a global leader in EPCM
-                services, expanding our capabilities across multiple industries
-                including oil & gas, petrochemicals, power generation, and
-                renewable energy. Our success is built on a foundation of
-                technical excellence, innovative thinking, and unwavering
-                commitment to our clients.
-              </p>
-              <p>
-                Today, we continue to push the boundaries of what's possible in
-                industrial engineering, embracing new technologies and
-                sustainable practices to deliver solutions that not only meet
-                today's needs but anticipate tomorrow's challenges.
-              </p>
             </div>
             <Button
               size="lg"
@@ -44,7 +31,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-border">
               <img
-                src="/placeholder.svg?height=400&width=600&text=Company+History"
+                src={ storyImg }
                 alt="EPCM Solutions company history and milestones"
                 className="w-full h-full object-cover"
               />

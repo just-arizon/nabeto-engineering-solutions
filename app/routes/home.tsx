@@ -1,8 +1,9 @@
 import type { Route } from "./+types/home";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import IndustryImg from "@/public/industryImg.jpg";
+import IndustryImg from "../public/industryImg.jpg";
 import { AboutSection } from "~/components/sections/about";
+import { ServiceSection } from "~/components/sections/services";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,14 +17,24 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const companies = [
+    { name: "Total", logo: "../public/logos/total-logo.svg" },
+    // { name: "Conoil", logo: "/logos/conoil.png" },
+    { name: "Sahara", logo: "../public//logos/sahara-logo.svg" },
+    { name: "Mobil", logo: "../public/logos/mobil-logo.svg" },
+    { name: "Pinnacle", logo: "../public/logos/pinnacle-logo.svg" },
+    { name: "Oando", logo: "../public/logos/Oando_logo.svg" },
+    { name: "Nipco", logo: "../public/logos/Nipco-logo.svg" },
+  ];
+
   return (
-    <section className="relative bg-gradient-to-br from-background to-muted py-16 lg:py-32">
+    <section className="relative  py-16 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
+              <h1 className="text-4xl lg:text-6xl font-extrabold text-foreground leading-tight text-balance">
                 Engineering Excellence in{" "}
                 <span className="text-primary">Every Project</span>
               </h1>
@@ -96,9 +107,39 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Company Marquee Section */}
+      <section className="pt-24 0">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-gray-500 mb-8">
+            Approved by leading companies in Nigeria
+          </p>
+          {/* Company Marquee Section */}
+          <div className="logo-marquee-container overflow-hidden">
+            <div className="logo-marquee-track flex gap-12 animate-marquee">
+              {[...companies, ...companies].map((company, index) => (
+                <div
+                  key={index}
+                  className="logo-marquee-item flex items-center justify-center px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="h-12 w-auto object-contain "
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="my-16 lg:my-32">
         {/* About Section */}
         <AboutSection />
+      </div>
+      <div className="my-16 lg:my-32">
+        {/* Services Section */}
+        <ServiceSection />
       </div>
     </section>
   );
