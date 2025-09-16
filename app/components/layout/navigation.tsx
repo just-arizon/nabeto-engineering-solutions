@@ -15,12 +15,12 @@ export function Navigation() {
     { href: "/services#operations", label: "Operations & Maintenance" },
   ]
 
-  const projectsDropdown = [
-    { href: "/projects#industrial", label: "Industrial Projects" },
-    { href: "/projects#infrastructure", label: "Infrastructure" },
-    { href: "/projects#energy", label: "Energy & Power" },
-    { href: "/projects#case-studies", label: "Case Studies" },
-  ]
+  // const projectsDropdown = [
+  //   { href: "/projects#industrial", label: "Industrial Projects" },
+  //   { href: "/projects#infrastructure", label: "Infrastructure" },
+  //   { href: "/projects#energy", label: "Energy & Power" },
+  //   { href: "/projects#case-studies", label: "Case Studies" },
+  // ]
 
   const policiesDropdown = [
     { href: "/policies#safety", label: "Safety Policies" },
@@ -33,7 +33,7 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services", dropdown: servicesDropdown },
-    { href: "/projects", label: "Projects", dropdown: projectsDropdown },
+    { href: "/projects", label: "Projects" },
     { href: "/policies", label: "Policies", dropdown: policiesDropdown },
   ]
 

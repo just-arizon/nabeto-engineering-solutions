@@ -8,13 +8,13 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 export function ContactSection() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50 pb-16">
       {/* Header Section */}
-      <div className="bg-green-700 text-white py-20">
+      <div className=" text-green-700 py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Get In Touch</h1>
-            <p className="text-xl text-green-100 text-pretty">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 ">Get In Touch</h1>
+            <p className=" text-black">
               Ready to discuss your next EPCM project? Our team of experts is here to help you achieve your engineering
               and construction goals.
             </p>
@@ -22,12 +22,12 @@ export function ContactSection() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 py-">
+        <div className="grid lg:grid-cols-1 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl text-green-700">Send Us a Message</CardTitle>
+              <CardTitle className="text-xl text-green-700">Send Us a Message</CardTitle>
               <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -109,85 +109,6 @@ export function ContactSection() {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl text-green-700">Contact Information</CardTitle>
-                <CardDescription>Reach out to us directly through any of these channels.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <Phone className="h-6 w-6 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 8:00 AM - 6:00 PM EST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <Mail className="h-6 w-6 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@epcmsolutions.com</p>
-                    <p className="text-sm text-gray-500">We respond within 24 hours</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Office</h3>
-                    <p className="text-gray-600">
-                      123 Industrial Blvd
-                      <br />
-                      Houston, TX 77001
-                      <br />
-                      United States
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <Clock className="h-6 w-6 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Business Hours</h3>
-                    <p className="text-gray-600">
-                      Monday - Friday: 8:00 AM - 6:00 PM
-                      <br />
-                      Saturday: 9:00 AM - 2:00 PM
-                      <br />
-                      Sunday: Closed
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-lg bg-green-50">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-green-700 mb-3">Emergency Support</h3>
-                <p className="text-gray-700 mb-4">
-                  For urgent project issues or emergency support, our on-call team is available 24/7.
-                </p>
-                <Button
-                  variant="outline"
-                  className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white bg-transparent"
-                >
-                  Emergency Hotline: +1 (555) 999-0000
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </div>

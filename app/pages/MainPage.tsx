@@ -134,7 +134,7 @@ export default function Main() {
         <ServiceSection />
       </div>
       {/* Contact */}
-      <div className="my-16 lg:my-32">
+      <div className="">
         {/* Services Section */}
         <ContactSection />
       </div>

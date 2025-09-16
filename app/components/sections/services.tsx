@@ -5,24 +5,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Zap, Shield, Clock, Users } from "lucide-react"
+import { SplinePointer, Cable, Construction, Users } from "lucide-react"
 
 export function ServiceSection() {
   const specializedServices = [
     {
-      icon: Zap,
+      icon: SplinePointer,
       title: "Engineering Design",
       description:
         "Advanced digital technologies for enhanced project delivery and asset management.",
     },
     {
-      icon: Shield,
-      title: "Procurement",
+      icon: Cable,
+      title: "Procurement Management",
       description:
         "Health, safety, and environmental consulting to ensure regulatory compliance.",
     },
     {
-      icon: Clock,
+      icon: Construction,
       title: "Construction Services",
       description:
         "Comprehensive project controls including scheduling, cost management, and risk analysis.",
@@ -42,7 +42,7 @@ export function ServiceSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">
             Specialized Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-pretty">
             Additional expertise to complement our core EPCM services and
             enhance project outcomes.
           </p>
