@@ -11,25 +11,25 @@ export function ServiceSection() {
   const specializedServices = [
     {
       icon: Zap,
-      title: "Digital Solutions",
+      title: "Engineering Design",
       description:
         "Advanced digital technologies for enhanced project delivery and asset management.",
     },
     {
       icon: Shield,
-      title: "HSE Consulting",
+      title: "Procurement",
       description:
         "Health, safety, and environmental consulting to ensure regulatory compliance.",
     },
     {
       icon: Clock,
-      title: "Project Controls",
+      title: "Construction Services",
       description:
         "Comprehensive project controls including scheduling, cost management, and risk analysis.",
     },
     {
       icon: Users,
-      title: "Training Services",
+      title: "Operations & Maintenance",
       description:
         "Technical training and capability development for your workforce.",
     },
