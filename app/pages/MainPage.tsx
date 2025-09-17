@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import { AboutSection } from "~/components/sections/about";
 import { ContactSection } from "~/components/sections/contact";
 import { ServiceSection } from "~/components/sections/services";
+import { ProjectSection } from "~/components/sections/project";
 
 export default function Main() {
   const companies = [
@@ -125,19 +126,26 @@ export default function Main() {
         </div>
       </section>
 
-      <div className="my-16 lg:my-32">
         {/* About Section */}
+      <div className="my-16 lg:my-32">
         <AboutSection />
       </div>
-      <div className="my-16 lg:my-32">
         {/* Services Section */}
+
+      <div className="my-16 lg:my-32">
         <ServiceSection />
       </div>
-      {/* Contact */}
+
+        {/* Projects Section */}
       <div className="">
+        <ProjectSection />
+      </div>
+      
         {/* Services Section */}
+      <div className="">
         <ContactSection />
       </div>
+
     </div>
   );
 }
