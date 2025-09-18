@@ -6,7 +6,7 @@ import { MapPin, Calendar, DollarSign, Users, ArrowRight, Filter, Search } from 
 export function ProjectSection() {
       const featuredProjects = [
     {
-      title: "Petrochemical Complex Expansion",
+      title: "Igando Petroleum Fuel Station",
       location: "Houston, Texas, USA",
       client: "Global Energy Corp",
       value: "$2.8B",
@@ -25,7 +25,7 @@ export function ProjectSection() {
       ],
     },
     {
-      title: "Offshore Wind Farm Development",
+      title: "Petrosafe Underground LPG Tank Installation",
       location: "North Sea, UK",
       client: "Renewable Energy Partners",
       value: "$1.5B",
@@ -44,7 +44,7 @@ export function ProjectSection() {
       ],
     },
     {
-      title: "LNG Processing Facility",
+      title: "Petrosafe Ijesha Gas Project",
       location: "Queensland, Australia",
       client: "Pacific Gas Solutions",
       value: "$3.2B",
@@ -65,7 +65,7 @@ export function ProjectSection() {
   ]
     return (
     
-      <section className="py-20 bg-background">
+      <section className="pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">Featured Projects</h2>
@@ -99,27 +99,10 @@ export function ProjectSection() {
                         <span className="text-sm text-muted-foreground">{project.year}</span>
                       </div>
                       <h3 className="text-2xl lg:text-3xl font-bold text-foreground">{project.title}</h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">{project.description}</p>
+                      {/* <p className="text-lg text-muted-foreground leading-relaxed">{project.description}</p> */}
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="flex items-center space-x-2">
-                        <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-sm text-foreground">{project.location}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <DollarSign className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-sm text-foreground">{project.value}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-sm text-foreground">{project.duration}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Users className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-sm text-foreground">{project.client}</span>
-                      </div>
-                    </div>
+                   
 
                     <div className="space-y-3">
                       <h4 className="font-semibold text-foreground">Services Provided</h4>
