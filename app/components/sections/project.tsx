@@ -34,7 +34,7 @@ export function ProjectSection() {
       year: "2024",
       description:
         "Engineering and construction management for a 500MW offshore wind farm including turbine installation and grid connection.",
-      image: "/placeholder.svg?height=300&width=500&text=Offshore+Wind+Farm",
+      image: "/petrosafe.png",
       services: ["Engineering", "Construction Management", "Operations Support"],
       highlights: [
         "500MW renewable energy capacity",
@@ -44,7 +44,7 @@ export function ProjectSection() {
       ],
     },
     {
-      title: "Petrosafe Ijesha Gas Project",
+      title: "Mushin Petroleum Project",
       location: "Queensland, Australia",
       client: "Pacific Gas Solutions",
       value: "$3.2B",
@@ -53,7 +53,7 @@ export function ProjectSection() {
       year: "2022",
       description:
         "Full EPCM delivery of a liquefied natural gas processing facility with capacity of 8 million tonnes per annum.",
-      image: "/placeholder.svg?height=300&width=500&text=LNG+Processing+Facility",
+      image: "/mushin.png",
       services: ["Engineering", "Procurement", "Construction", "Operations"],
       highlights: [
         "8 MTPA processing capacity",

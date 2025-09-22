@@ -38,7 +38,7 @@ export default function Main() {
               {/* Key Benefits */}
               <div className="space-y-3">
                 {[
-                  "25+ years of industry expertise",
+                  "20+ years of industry expertise",
                   "Global project delivery capability",
                   "Sustainable and innovative solutions",
                 ].map((benefit, index) => (
@@ -83,15 +83,15 @@ export default function Main() {
               <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-6 shadow-lg">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-primary">500+</div>
+                    <div className="text-2xl font-bold text-primary">5+</div>
                     <div className="text-sm text-muted-foreground">
                       Projects Completed
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary">50+</div>
+                    <div className="text-2xl font-bold text-primary">3+</div>
                     <div className="text-sm text-muted-foreground">
-                      Countries Served
+                      States Served
                     </div>
                   </div>
                 </div>

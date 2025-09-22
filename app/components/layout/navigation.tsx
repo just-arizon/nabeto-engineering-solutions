@@ -26,7 +26,7 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services", dropdown: servicesDropdown },
+    { href: "/services", label: "Services" },
     { href: "/projects", label: "Projects" },
     { href: "/policies", label: "Policies", dropdown: policiesDropdown },
   ]
@@ -81,9 +81,11 @@ export function Navigation() {
 
           {/* Contact Button (Desktop) */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Contact Us
-            </Button>
+            <Link to={"/#contact"}>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                Contact Us
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

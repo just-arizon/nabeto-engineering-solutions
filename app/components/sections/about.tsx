@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router";
 // import storyImg from "../public/storyImg.jpg";
 
 export function AboutSection() {
@@ -20,13 +21,15 @@ export function AboutSection() {
                 of above 20 years in the oil and gas service industry.
               </p>
             </div>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              Read more
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/about">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Read more
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-border">
