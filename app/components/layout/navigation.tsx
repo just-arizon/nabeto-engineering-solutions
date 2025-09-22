@@ -38,7 +38,7 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-1">
             <span className="h-14 pt-4">
-              <Building2 className="h-9 w-9 text-primary" />
+              <img src="/logos/nabeto-logo.svg" alt="Nabeto Logo" className="h-10 w-auto" />
             </span>
             <span className="grid gap-0">
               <span className="font-bold text-xl text-foreground">Nabeto</span>
@@ -99,52 +99,69 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card rounded-lg mt-2 border border-border">
-              {navItems.map((item) => (
-                <div key={item.href}>
-                  <button
-                    onClick={() =>
-                      setOpenDropdown(openDropdown === item.href ? null : item.href)
-                    }
-                    className="w-full flex items-center justify-between px-3 py-2 text-left text-sm font-medium text-foreground hover:text-primary transition-colors"
-                  >
-                    {item.label}
-                    {item.dropdown && (
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
-                          openDropdown === item.href ? "rotate-180" : ""
-                        }`}
-                      />
-                    )}
-                  </button>
+       {/* Mobile Navigation */}
+{isMenuOpen && (
+  <div className="md:hidden mt-2 bg-card rounded-lg border border-border">
+    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {navItems.map((item) => (
+        <div key={item.href}>
+          {/* Case 1: Normal Link (no dropdown) */}
+          {!item.dropdown ? (
+            <Link
+              to={item.href}
+              className="block w-full px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+              onClick={() => setIsMenuOpen(false)} // close menu after navigation
+            >
+              {item.label}
+            </Link>
+          ) : (
+            /* Case 2: Dropdown button */
+            <>
+              <button
+                onClick={() =>
+                  setOpenDropdown(openDropdown === item.href ? null : item.href)
+                }
+                className="w-full flex items-center justify-between px-3 py-2 text-left text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    openDropdown === item.href ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-                  {item.dropdown && openDropdown === item.href && (
-                    <div className="ml-4 space-y-1">
-                      {item.dropdown.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.href}
-                          to={dropdownItem.href}
-                          className="block px-3 py-2 text-sm text-card-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                        >
-                          {dropdownItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+              {openDropdown === item.href && (
+                <div className="ml-4 space-y-1">
+                  {item.dropdown.map((dropdownItem) => (
+                    <Link
+                      key={dropdownItem.href}
+                      to={dropdownItem.href}
+                      className="block px-3 py-2 text-sm text-card-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                      onClick={() => setIsMenuOpen(false)} // close after click
+                    >
+                      {dropdownItem.label}
+                    </Link>
+                  ))}
                 </div>
-              ))}
+              )}
+            </>
+          )}
+        </div>
+      ))}
 
-              <div className="pt-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
+      <div className="pt-2">
+        <Button
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Contact Us
+        </Button>
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </nav>
   )

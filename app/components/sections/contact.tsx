@@ -50,7 +50,7 @@ export function ContactSection() {
 
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" />
+                  <Input id="phone" type="tel" placeholder="+234 (080) 123-4567" />
                 </div>
 
                 <div className="space-y-2">
