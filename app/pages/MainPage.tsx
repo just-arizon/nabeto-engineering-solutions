@@ -4,6 +4,7 @@ import { AboutSection } from "~/components/sections/about";
 import { ContactSection } from "~/components/sections/contact";
 import { ServiceSection } from "~/components/sections/services";
 import { ProjectSection } from "~/components/sections/project";
+import { motion } from "framer-motion";
 
 export default function Main() {
   const companies = [
@@ -11,7 +12,10 @@ export default function Main() {
     // { name: "Conoil", logo: "/logos/conoil.png" },
     { name: "Sahara", logo: "/logos/sahara-logo.svg" },
     { name: "Mobil", logo: "/logos/mobil-logo.svg" },
-    { name: "Pinnacle", logo: "/logos/pinnacle-logo.svg" },
+    { name: "Dangote", logo: "/logos/dangote-logo.png" },
+    { name: "ForteOil", logo: "/logos/forteoil-logo.png" },
+    { name: "Conoil", logo: "/logos/conoil.png" },
+    { name: "Techoil", logo: "/logos/techoil.png" },
     { name: "Oando", logo: "/logos/Oando_logo.svg" },
     { name: "Nipco", logo: "/logos/Nipco-logo.svg" },
   ];
@@ -24,19 +28,35 @@ export default function Main() {
             {/* Content */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl lg:text-6xl font-extrabold text-foreground leading-tight text-balance">
-                  Engineering Excellence in{" "}
-                  <span className="text-primary">Every Project</span>
-                </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed text-pretty">
+                <motion.h1 className="text-4xl lg:text-6xl font-extrabold text-foreground leading-tight text-balance"
+                initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
+                >
+                  One stop shop engineering {" "}
+                  <motion.div className="text-primary"
+                   initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeIn" }}
+                  >Solution Provider</motion.div>
+                </motion.h1>
+                <motion.p className="lg:text-xl text-lg text-muted-foreground leading-relaxed text-pretty"
+                initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: "easeIn" }}
+                >
                   Comprehensive EPCM solutions delivering world-class
                   engineering, procurement, construction, operation, and
                   maintenance services for industrial projects worldwide.
-                </p>
+                </motion.p>
               </div>
 
               {/* Key Benefits */}
-              <div className="space-y-3">
+              <motion.div className="space-y-3"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, ease: "easeIn" }}
+              >
                 {[
                   "20+ years of industry expertise",
                   "Global project delivery capability",
@@ -49,7 +69,7 @@ export default function Main() {
                     </span>
                   </div>
                 ))}
-              </div>
+              </motion.div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
@@ -71,10 +91,14 @@ export default function Main() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative">
+            <motion.div className="relative -top-10"
+            initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
+            >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted border border-border">
                 <img
-                  src="/industryImg.jpg"
+                  src="/industryImg.png"
                   alt="Industrial construction site showcasing EPCM capabilities"
                   className="w-full h-full object-cover"
                 />
@@ -96,7 +120,7 @@ export default function Main() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

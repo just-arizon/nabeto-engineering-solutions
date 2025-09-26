@@ -26,8 +26,8 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/projects", label: "Projects" },
+    { href: "/services", label: "Services", dropdown: servicesDropdown },
+    { href: "/projects", label: "Projects"},
     { href: "/policies", label: "Policies", dropdown: policiesDropdown },
   ]
 
@@ -40,8 +40,8 @@ export function Navigation() {
             <span className="h-14 pt-4">
               <img src="/logos/nabeto-logo.svg" alt="Nabeto Logo" className="h-10 w-auto" />
             </span>
-            <span className="grid gap-0">
-              <span className="font-bold text-xl text-foreground">Nabeto</span>
+            <span className="grid gap-0 uppercase">
+              <span className="font-extrabold text-xl text-foreground">Nabeto</span>
               <sub className="font-normal">Engineering</sub>
             </span>
           </Link>
