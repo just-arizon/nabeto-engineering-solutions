@@ -22,10 +22,10 @@ export default function Main() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-background to-muted py-16">
+      {/* <section className="relative bg-gradient-to-br from-background to-muted py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
+           
             <div className="space-y-8">
               <div className="space-y-4">
                 <motion.h1 className="text-4xl lg:text-6xl font-extrabold text-foreground leading-tight text-balance"
@@ -51,7 +51,7 @@ export default function Main() {
                 </motion.p>
               </div>
 
-              {/* Key Benefits */}
+             
               <motion.div className="space-y-3"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function Main() {
                 ))}
               </motion.div>
 
-              {/* CTA Buttons */}
+            
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
@@ -90,7 +90,7 @@ export default function Main() {
               </div>
             </div>
 
-            {/* Hero Image */}
+           
             <motion.div className="relative -top-10"
             initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function Main() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Floating Stats Card */}
+            
               <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-6 shadow-lg">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
@@ -123,7 +123,7 @@ export default function Main() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Company Marquee Section */}
       <section className="pt-24 0">
