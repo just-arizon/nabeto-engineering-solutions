@@ -213,13 +213,6 @@ export function ProjectSection() {
           >
             More Details
           </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-primary w-full bg-transparent"
-          >
-            View in Big
-          </Button>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Wrench, ShoppingCart, HardHat, Cog } from "lucide-react"
 // import Image from "next/image"
+import { motion } from "framer-motion";
 
 export function ServiceSection() {
   const services = [
@@ -52,9 +53,12 @@ export function ServiceSection() {
           {services.map((service, index) => {
             const IconComponent = service.icon
             return (
-              <Card
+              <motion.div
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 border-border bg-card overflow-hidden relative h-80 bg-blue-200"
+                className="group hover:shadow-lg transition-all duration-300 border-border bg-card overflow-hidden relative h-80 rounded-xl shadow-md"
+                initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
               >
                 <div className="absolute inset-0">
                   <img
@@ -63,18 +67,18 @@ export function ServiceSection() {
 
                     className="object-cover transition-transform duration-300 group-hover:scale-105 w-full h-full"
                   />
-            <div className="absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-black/100 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-[100%] bg-gradient-to-t from-black/100 to-transparent" />
 
 
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col p-3 justify-end">
-                  <div className="text-start space-y-3">
+                <div className="relative z-10 h-full flex flex-col p-3 justify-end ">
+                  <div className="text-start space-y- h-24">
                     <h3 className="text-xl font-bold text-muted">{service.title}</h3>
                     <p className="text-white/90 text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </div>
-              </Card>
+              </motion.div>
             )
           })}
         </div>

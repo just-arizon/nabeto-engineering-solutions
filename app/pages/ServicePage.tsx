@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Wrench, ShoppingCart, HardHat, Cog, CheckCircle, ArrowRight, Zap, Shield, Clock, Users } from "lucide-react"
+import { motion } from "framer-motion";
+
 
 export default function ServicesPage() {
   const mainServices = [
