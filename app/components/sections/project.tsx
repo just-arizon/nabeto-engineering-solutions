@@ -172,7 +172,7 @@ export function ProjectSection() {
   return (
     <section className="pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="">
+        <div className="my-10">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance text-center">
             Featured Projects
           </h2>
@@ -201,18 +201,20 @@ export function ProjectSection() {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4 p-6">
-        <h3 className="text-white font-bold text-lg text-center text-balance">
-          {project.title}
-        </h3>
-        <div className="flex flex-col space-y-3 w-full">
-          <Button
-            size="sm"
-            variant="secondary"
-            className="bg-white text-primary hover:bg-white/90 w-full"
-          >
-            More Details
-          </Button>
+      <div className="absolute inset-0 bg-black/40  transition-opacity duration-300 flex flex-col items-center justify-center space-y-4 p-6">
+        <div className="">
+          <h3 className="text-white font-bold text-lg text-center text-balance">
+            {project.title}
+          </h3>
+          <div className="flex flex-col space-y-3 w-full">
+            <Button
+              size="sm"
+              variant="secondary"
+              className="bg-white text-primary hover:bg-white/90 w-full"
+            >
+              More Details
+            </Button>
+          </div>
         </div>
       </div>
 
