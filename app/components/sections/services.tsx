@@ -11,7 +11,7 @@ export function ServiceSection() {
       description:
         "Comprehensive engineering design and technical consulting services for complex industrial projects.",
       features: ["Process Design", "Structural Engineering", "Electrical & Instrumentation"],
-      image: "/design.png",
+      image: "/engineering-design.png",
     },
     {
       icon: ShoppingCart,

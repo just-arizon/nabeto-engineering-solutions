@@ -34,7 +34,7 @@ export function AboutSection() {
             </Link>
           </div>
           <div className="relative grid grid-cols-1 gap-4 justify-items-center">
-            <div className="w-2/3 rounded-2xl overflow-hidden bg-card border border-border">
+            <div className="lg:w-2/3 rounded-2xl overflow-hidden bg-card border border-border">
               <img
                 src="/storyImg.jpg"
                 alt="EPCM Solutions company history and milestones"

@@ -1,10 +1,21 @@
-"use-client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, Award, Globe, Target, Eye, Heart } from "lucide-react"
+import { Splide, SplideSlide } from "@splidejs/react-splide"
+import "@splidejs/react-splide/css"
+import { useRef, useEffect } from "react"
 
 export default function AboutPage() {
+  const mainRef = useRef<Splide>(null)
+  const thumbsRef = useRef<Splide>(null)
+
+  useEffect(() => {
+    if (mainRef.current && thumbsRef.current && thumbsRef.current.splide) {
+      mainRef.current.sync(thumbsRef.current.splide)
+    }
+  }, [])
+
   const stats = [
     { icon: Users, label: "Team Members", value: "500+" },
     { icon: Award, label: "Years Experience", value: "25+" },
@@ -39,42 +50,63 @@ export default function AboutPage() {
 
   const leadership = [
     {
-      name: "Sarah Johnson",
-      role: "Chief Executive Officer",
+      name: "Engr. Raphael Chinweuba",
+      role: "Managing Director/CEO",
       experience: "20+ years in industrial engineering",
       image: "/placeholder.svg?height=300&width=300&text=CEO",
     },
     {
-      name: "Michael Chen",
-      role: "Chief Technology Officer",
-      experience: "18+ years in process engineering",
+      name: "Evelyn Chinenye Chinweuba",
+      role: "General Manager, Administration",
+      experience: "10+ years in process engineering",
       image: "/placeholder.svg?height=300&width=300&text=CTO",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Chief Operations Officer",
+      name: "Olisaemeka Okpala",
+      role: "Company Secretary",
       experience: "15+ years in project management",
+      image: "/placeholder.svg?height=300&width=300&text=COO",
+    },
+    {
+      name: "Ikechukwu Onuaguluchi",
+      role: "Engineering Manager",
+      experience: "15+ years in project management",
+      image: "/placeholder.svg?height=300&width=300&text=COO",
+    },
+    {
+      name: "Jokotoye Oyewola",
+      role: "Lead, Electrical Engineer",
+      experience: "20+ years in project management",
+      image: "/placeholder.svg?height=300&width=300&text=COO",
+    },
+    {
+      name: "Adeyanju Emmanuel",
+      role: "Lead, Mechanical Engineer",
+      experience: "15+ years in project management",
+      image: "/placeholder.svg?height=300&width=300&text=COO",
+    },
+    {
+      name: "Ihuoma Victoria",
+      role: "Document Controller",
+      experience: "7+ years in project management",
       image: "/placeholder.svg?height=300&width=300&text=COO",
     },
   ]
 
   return (
     <main className="min-h-screen">
-
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background to-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        className="relative py-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/industrial-construction-site-with-cranes-and-moder.jpg')" }}
+      >
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="outline" className="border-primary text-primary">
-              About EPCM Solutions
-            </Badge>
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground text-balance">
-              Building the Future Through Engineering Excellence
+            <h1 className="text-4xl lg:text-5xl font-bold text-white text-balance">
+              About
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed text-pretty">
-              For over 25 years, we have been at the forefront of industrial engineering, delivering comprehensive EPCM
-              solutions that transform ideas into reality.
-            </p>
           </div>
         </div>
       </section>
@@ -107,31 +139,143 @@ export default function AboutPage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 1998, EPCM Solutions began as a small engineering consultancy with a vision to
-                  revolutionize industrial project delivery. Our founders recognized the need for integrated solutions
-                  that could seamlessly connect engineering design with practical implementation.
+                  NABETO Engineering Limited is an Engineering, Procurement, Installation, Construction, Operation and
+                  Maintenance (EPICOM) company in the Oil and Gas Industry.
                 </p>
                 <p>
-                  Over the decades, we have grown into a global leader in EPCM services, expanding our capabilities
-                  across multiple industries including oil & gas, petrochemicals, power generation, and renewable
-                  energy. Our success is built on a foundation of technical excellence, innovative thinking, and
-                  unwavering commitment to our clients.
+                  The company is a wholly indigenous company owned and managed by seasoned and experienced Nigerian
+                  professionals.
                 </p>
                 <p>
-                  Today, we continue to push the boundaries of what's possible in industrial engineering, embracing new
-                  technologies and sustainable practices to deliver solutions that not only meet today's needs but
-                  anticipate tomorrow's challenges.
+                  The engineering and management staff have multi-disciplinary experiences with an average technical and
+                  management experience of above 20 years in the oil and gas service industry.
                 </p>
+              </div>
+
+              <div className="mt-8">
+                <Splide
+                  ref={thumbsRef}
+                  aria-label="Thumbnail Navigation"
+                  options={{
+                    fixedWidth: 100,
+                    fixedHeight: 60,
+                    isNavigation: true,
+                    gap: "1rem",
+                    focus: "center",
+                    pagination: false,
+                    arrows: true,
+                    cover: true,
+                    breakpoints: {
+                      640: {
+                        fixedWidth: 80,
+                        fixedHeight: 48,
+                      },
+                    },
+                  }}
+
+                >
+                  <SplideSlide className="rounded-xl">
+                    <img
+                      src="/storyImg.jpg"
+                      alt="Thumbnail 1"
+                      className="cursor-pointer object-cover rounded-md w-full h-full"
+                    />
+                  </SplideSlide>
+                  <SplideSlide className="rounded-xl">
+                    <img
+                      src="/storyImg-two.png"
+                      alt="Thumbnail 2"
+                      className="cursor-pointer object-cover rounded-md w-full h-full"
+                    />
+                  </SplideSlide>
+                  <SplideSlide className="rounded-xl">
+                    <img
+                      src="/storyImg-three.png"
+                      alt="Thumbnail 3"
+                      className="cursor-pointer object-cover rounded-md w-full h-full"
+                    />
+                  </SplideSlide>
+                  <SplideSlide className="rounded-xl">
+                    <img
+                      src="/storyImg.jpg"
+                      alt="Thumbnail 4"
+                      className="cursor-pointer object-cover rounded-md w-full h-full"
+                    />
+                  </SplideSlide>
+                  <SplideSlide className="rounded-xl">
+                    <img
+                      src="/storyImg-two.png"
+                      alt="Thumbnail 5"
+                      className="cursor-pointer object-cover rounded-md w-full h-full"
+                    />
+                  </SplideSlide>
+                  <SplideSlide className="rounded-xl">
+                    <img
+                      src="/storyImg-three.png"
+                      alt="Thumbnail 6"
+                      className="cursor-pointer object-cover rounded-md w-full h-full"
+                    />
+                  </SplideSlide>
+                </Splide>
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-border">
-                <img
-                  src="/placeholder.svg?height=400&width=600&text=Company+History"
-                  alt="EPCM Solutions company history and milestones"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+
+            <div>
+              <Splide
+                ref={mainRef}
+                aria-label="Main Image Carousel"
+                options={{
+                  type: "fade",
+                  height: "50vh",
+                  pagination: false,
+                  arrows: false,
+                  cover: true,
+                }}
+                
+              >
+                <SplideSlide className="rounded-xl">
+                  <img
+                    src="/storyImg.jpg"
+                    alt="Company Story 1"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SplideSlide>
+                <SplideSlide className="rounded-xl">
+                  <img
+                    src="/storyImg-two.png"
+                    alt="Company Story 2"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SplideSlide>
+                <SplideSlide className="rounded-xl">
+                  <img
+                    src="/storyImg-three.png"
+                    alt="Company Story 3"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SplideSlide>
+                <SplideSlide className="rounded-xl">
+                  <img
+                    src="/storyImg.jpg"
+                    alt="Company Story 4"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SplideSlide>
+                <SplideSlide className="rounded-xl">
+                  <img
+                    src="/storyImg-two.png"
+                    alt="Company Story 5"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SplideSlide>
+                <SplideSlide className="rounded-xl">
+                  <img
+                    src="/storyImg-three.png"
+                    alt="Company Story 6"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SplideSlide>
+              </Splide>
             </div>
           </div>
         </div>
@@ -211,7 +355,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
             {leadership.map((leader, index) => (
               <Card key={index} className="text-center border-border bg-card hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -222,11 +366,11 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardTitle className="text-xl text-card-foreground">{leader.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium">{leader.role}</CardDescription>
+                  <CardTitle className="text-lg text-card-foreground">{leader.name}</CardTitle>
+                  <CardDescription className="text-primary font-medium text-sm">{leader.role}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">{leader.experience}</p>
+                  <p className="text-muted-foreground text-xs">{leader.experience}</p>
                 </CardContent>
               </Card>
             ))}
