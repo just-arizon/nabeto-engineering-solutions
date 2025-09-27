@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import { Link } from "react-router"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Building2, ChevronDown } from "lucide-react"
+import { Link } from "react-router";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Building2, ChevronDown } from "lucide-react";
 
 export function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const servicesDropdown = [
     { href: "/services#engineering", label: "Engineering Design" },
     { href: "/services#procurement", label: "Procurement Management" },
     { href: "/services#construction", label: "Construction Services" },
     { href: "/services#operations", label: "Operations & Maintenance" },
-  ]
+  ];
 
   const policiesDropdown = [
     { href: "/policies#safety", label: "Safety Policies" },
     { href: "/policies#quality", label: "Quality Standards" },
     { href: "/policies#environmental", label: "Environmental" },
     { href: "/policies#compliance", label: "Compliance" },
-  ]
+  ];
 
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services", dropdown: servicesDropdown },
-    { href: "/projects", label: "Projects"},
+    { href: "/projects", label: "Projects" },
     { href: "/policies", label: "Policies", dropdown: policiesDropdown },
-  ]
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -101,70 +101,69 @@ export function Navigation() {
           </div>
         </div>
 
-       {/* Mobile Navigation */}
-{isMenuOpen && (
-  <div className="md:hidden mt-2 bg-card rounded-lg border border-border">
-    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      {navItems.map((item) => (
-        <div key={item.href}>
-          {/* Case 1: Normal Link (no dropdown) */}
-          {!item.dropdown ? (
-            <Link
-              to={item.href}
-              className="block w-full px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-              onClick={() => setIsMenuOpen(false)} // close menu after navigation
-            >
-              {item.label}
-            </Link>
-          ) : (
-            /* Case 2: Dropdown button */
-            <>
-              <button
-                onClick={() =>
-                  setOpenDropdown(openDropdown === item.href ? null : item.href)
-                }
-                className="w-full flex items-center justify-between px-3 py-2 text-left text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {item.label}
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${
-                    openDropdown === item.href ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {openDropdown === item.href && (
-                <div className="ml-4 space-y-1">
-                  {item.dropdown.map((dropdownItem) => (
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-2 bg-card rounded-lg border border-border">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navItems.map((item) => (
+                <div key={item.href}>
+                  {/* Case 1: Normal Link (no dropdown) */}
+                  {!item.dropdown ? (
                     <Link
-                      key={dropdownItem.href}
-                      to={dropdownItem.href}
-                      className="block px-3 py-2 text-sm text-card-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                      onClick={() => setIsMenuOpen(false)} // close after click
+                      to={item.href}
+                      className="block w-full px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                      onClick={() => setIsMenuOpen(false)} // close menu after navigation
                     >
-                      {dropdownItem.label}
+                      {item.label}
                     </Link>
-                  ))}
+                  ) : (
+                    /* Case 2: Dropdown button */
+                    <>
+                      <button
+                        onClick={() =>
+                          setOpenDropdown(openDropdown === item.href ? null : item.href)
+                        }
+                        className="w-full flex items-center justify-between px-3 py-2 text-left text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${
+                            openDropdown === item.href ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {openDropdown === item.href && (
+                        <div className="ml-4 space-y-1">
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.href}
+                              to={dropdownItem.href}
+                              className="block px-3 py-2 text-sm text-card-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                              onClick={() => setIsMenuOpen(false)} // close after click
+                            >
+                              {dropdownItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
-              )}
-            </>
-          )}
-        </div>
-      ))}
+              ))}
 
-      <div className="pt-2">
-        <Button
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Contact Us
-        </Button>
-      </div>
-    </div>
-  </div>
-)}
-
+              <div className="pt-2">
+                <Button
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
-  )
+  );
 }

@@ -53,43 +53,43 @@ export default function AboutPage() {
       name: "Engr. Raphael Chinweuba",
       role: "Managing Director/CEO",
       experience: "20+ years in industrial engineering",
-      image: "/placeholder.svg?height=300&width=300&text=CEO",
+      image: "?height=300&width=300&text=CEO",
     },
     {
       name: "Evelyn Chinenye Chinweuba",
       role: "General Manager, Administration",
       experience: "10+ years in process engineering",
-      image: "/placeholder.svg?height=300&width=300&text=CTO",
+      image: "?height=300&width=300&text=CTO",
     },
     {
       name: "Olisaemeka Okpala",
       role: "Company Secretary",
       experience: "15+ years in project management",
-      image: "/placeholder.svg?height=300&width=300&text=COO",
+      image: "?height=300&width=300&text=COO",
     },
     {
       name: "Ikechukwu Onuaguluchi",
       role: "Engineering Manager",
       experience: "15+ years in project management",
-      image: "/placeholder.svg?height=300&width=300&text=COO",
+      image: "?height=300&width=300&text=COO",
     },
     {
       name: "Jokotoye Oyewola",
       role: "Lead, Electrical Engineer",
       experience: "20+ years in project management",
-      image: "/placeholder.svg?height=300&width=300&text=COO",
+      image: "?height=300&width=300&text=COO",
     },
     {
       name: "Adeyanju Emmanuel",
       role: "Lead, Mechanical Engineer",
       experience: "15+ years in project management",
-      image: "/placeholder.svg?height=300&width=300&text=COO",
+      image: "?height=300&width=300&text=COO",
     },
     {
       name: "Ihuoma Victoria",
       role: "Document Controller",
       experience: "7+ years in project management",
-      image: "/placeholder.svg?height=300&width=300&text=COO",
+      image: "?height=300&width=300&text=COO",
     },
   ]
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section
         className="relative py-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/industrial-construction-site-with-cranes-and-moder.jpg')" }}
+        style={{ backgroundImage: "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/industrial-construction-site-with-cranes-and-moder-UHlzyiPgUarcrnUW8VTrff2BdFxDBG.jpg')" }}
       >
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50"></div>
@@ -361,7 +361,7 @@ export default function AboutPage() {
                 <CardHeader>
                   <div className="mx-auto w-32 h-32 rounded-full overflow-hidden bg-muted border border-border mb-4">
                     <img
-                      src={leader.image || "/placeholder.svg"}
+                      src={leader.image || ""}
                       alt={`${leader.name} - ${leader.role}`}
                       className="w-full h-full object-cover"
                     />
