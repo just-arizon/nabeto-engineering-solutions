@@ -48,31 +48,32 @@ export function ServiceSection() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon
             return (
               <Card
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 border-border overflow-hidden bg-white"
+                className="group hover:shadow-lg transition-all duration-300 border-border bg-card overflow-hidden relative h-80 bg-blue-200"
               >
-                <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute inset-0">
                   <img
                     src={service.image || "/placeholder.svg"}
                     alt={`${service.title} services`}
-                    // fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+
+                    className="object-cover transition-transform duration-300 group-hover:scale-105 w-full h-full"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-black/100 to-transparent" />
+
+
                 </div>
 
-                <CardHeader className="text-center">
-                  {/* <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <IconComponent className="h-8 w-8 text-primary" />
-                  </div> */}
-                  <CardTitle className="text-lg  uppercase font-extrabold">{service.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
-                </CardHeader>
+                <div className="relative z-10 h-full flex flex-col p-3 justify-end">
+                  <div className="text-start space-y-3">
+                    <h3 className="text-xl font-bold text-muted">{service.title}</h3>
+                    <p className="text-white/90 text-sm leading-relaxed">{service.description}</p>
+                  </div>
+                </div>
               </Card>
             )
           })}

@@ -126,7 +126,7 @@ export default function Main() {
       </section> */}
 
       {/* Company Marquee Section */}
-      <section className="pt-24 0">
+      <section className="pt-10">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-gray-500 mb-8 font-semibold">
             Approved by leading companies in Nigeria

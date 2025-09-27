@@ -20,7 +20,7 @@ export function AboutSection() {
             <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
               <p>
                 The company is a wholly indigenous company owned and managed by
-                seasoned and experienced Nigerian professionals ranging from engineering design, procurement, construction, installation, commissioning and maintanance of tank farms & petroleum products deposts, fire fighting systems, piping, instrumentation and control systems, electrical systems, metering systems and aviation fuelling system.
+                seasoned and experienced Nigerian professionals ranging from engineering design, procurement, construction, installation, commissioning and maintanance.
               </p>
             </div>
             <Link to="/about" className="flex justify-center">
