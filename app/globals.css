@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "@splidejs/react-splide/css";
+/* @import "@splidejs/react-splide/css"; */
 @custom-variant dark (&:is(.dark *));
 
 
