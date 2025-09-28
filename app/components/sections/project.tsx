@@ -24,7 +24,7 @@ export function ProjectSection() {
       ],
     },
     {
-      title: "Petrosafe Underground LPG Tank Installation",
+      title: "PetroSafe Underground LPG Tank Installation",
       location: "North Sea, UK",
       client: "Renewable Energy Partners",
       value: "$1.5B",
@@ -193,11 +193,11 @@ export function ProjectSection() {
               />
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4 p-6">
-                <h3 className="text-white font-bold text-lg text-center text-balance">
+              <div className="absolute inset-0 bg-black/40  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-6">
+                <h3 className="text-white font-bold text-lg text-start text-balance">
                   {project.title}
                 </h3>
-                <div className="flex flex-col space-y-3 w-full">
+                <div className="flex flex-col space-y-3">
                   <Button
                     size="sm"
                     variant="secondary"

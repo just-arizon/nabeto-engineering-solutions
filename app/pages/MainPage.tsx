@@ -27,7 +27,7 @@ export default function Main() {
 
       {/* Company Marquee Section */}
       <section className="pt-10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="">
           <p className="text-center text-gray-500 mb-8 font-semibold">
             Approved by leading companies in Nigeria
           </p>
