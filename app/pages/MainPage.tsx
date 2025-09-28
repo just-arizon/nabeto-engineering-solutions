@@ -167,7 +167,7 @@ export default function Main() {
       
         {/* Services Section */}
       <div className="">
-        <ContactSection />
+        {/* <ContactSection /> */}
       </div>
 
     </div>

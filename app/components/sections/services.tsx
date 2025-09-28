@@ -58,7 +58,7 @@ export function ServiceSection() {
                 className="group hover:shadow-lg transition-all duration-300 border-border bg-card overflow-hidden relative h-80 rounded-xl shadow-md"
                 initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0  }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              // transition={{ duration: 1, ease: "easeOut" }}
               >
                 <div className="absolute inset-0">
                   <img

@@ -1,14 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  MapPin,
-  Calendar,
-  DollarSign,
-  Users,
-  ArrowRight,
-  Filter,
-  Search,
-} from "lucide-react";
+
 
 export function ProjectSection() {
   const featuredProjects = [
@@ -182,59 +174,58 @@ export function ProjectSection() {
             </div>
           </div>
 
-          <p className="text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-center">
             Highlighting some of our most significant and innovative project
             deliveries across various industries.
           </p>
         </div>
 
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:my-10">
-  {featuredProjects.map((project, index) => (
-    <div
-      key={index}
-      className="group relative rounded-2xl overflow-hidden cursor-pointer"
-    >
-      <img
-        src={project.image || "/placeholder.svg"}
-        alt={`${project.title} project showcase`}
-        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-      />
-
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-black/40  transition-opacity duration-300 flex flex-col items-center justify-center space-y-4 p-6">
-        <div className="">
-          <h3 className="text-white font-bold text-lg text-center text-balance">
-            {project.title}
-          </h3>
-          <div className="flex flex-col space-y-3 w-full">
-            <Button
-              size="sm"
-              variant="secondary"
-              className="bg-white text-primary hover:bg-white/90 w-full"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:my-10">
+          {featuredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="group relative rounded-2xl overflow-hidden cursor-pointer"
             >
-              More Details
-            </Button>
-          </div>
+              <img
+                src={project.image || "/placeholder.svg"}
+                alt={`${project.title} project showcase`}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4 p-6">
+                <h3 className="text-white font-bold text-lg text-center text-balance">
+                  {project.title}
+                </h3>
+                <div className="flex flex-col space-y-3 w-full">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    className="bg-white text-primary hover:bg-white/90 w-full"
+                  >
+                    More Details
+                  </Button>
+                </div>
+              </div>
+
+              {/* Status Badge */}
+              <div className="absolute top-4 left-4">
+                <Badge
+                  variant={
+                    project.status === "Completed" ? "default" : "secondary"
+                  }
+                  className={
+                    project.status === "Completed"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground"
+                  }
+                >
+                  {project.status}
+                </Badge>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-
-      {/* Status Badge */}
-      <div className="absolute top-4 left-4">
-        <Badge
-          variant={project.status === "Completed" ? "default" : "secondary"}
-          className={
-            project.status === "Completed"
-              ? "bg-primary text-primary-foreground"
-              : "bg-secondary text-secondary-foreground"
-          }
-        >
-          {project.status}
-        </Badge>
-      </div>
-    </div>
-  ))}
-</div>
-
       </div>
     </section>
   );

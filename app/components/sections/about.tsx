@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router";
 // import storyImg from "../public/storyImg.jpg";
 

@@ -32,8 +32,8 @@ export default function AboutPage() {
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white text-balance">
+          <div className="max-w-4xl mx-auto text-start space-y-6">
+            <h1 className="text-3xl lg:text-4xl  text-white text-balance">
               About
             </h1>
           </div>
