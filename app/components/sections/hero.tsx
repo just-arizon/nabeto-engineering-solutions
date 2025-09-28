@@ -38,7 +38,7 @@ export default function HeroSection() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-fit overflow-hidden py-10 lg:py-20">
       {/* Image Slider */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -63,7 +63,7 @@ export default function HeroSection() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div className="max-w-2xl lg:px-10 ">
             <motion.h1
-              className="text-3xl lg:text-5xl font-extrabold leading-tight text-balance"
+              className="text-4xl lg:text-5xl font-extrabold leading-tight text-balance"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -102,7 +102,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 mt-10 hidden lg:flex"
+              className="flex flex-col sm:flex-row gap-4 mt-10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: "easeOut", delay: 0.6 }}
@@ -129,13 +129,13 @@ export default function HeroSection() {
       {/* Slider Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 hover:bg-white/40 transition"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 hover:bg-white/40 transition hidden lg:flex"
       >
         <ChevronLeft className="w-6 h-6 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 hover:bg-white/40 transition"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 hover:bg-white/40 transition hidden lg:flex"
       >
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
