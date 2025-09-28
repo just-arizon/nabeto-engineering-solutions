@@ -49,13 +49,13 @@ export function ServiceSection() {
           </div>
         </div>
 
-         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon
             return (
               <motion.div
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 border-border bg-card overflow-hidden relative h-80 rounded-xl shadow-md"
+                className="group hover:shadow-lg transition-all duration-300 border-border bg-card overflow-hidden relative h-80 rounded-xl shadow-md "
                 initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0  }}
               // transition={{ duration: 1, ease: "easeOut" }}
@@ -72,8 +72,8 @@ export function ServiceSection() {
 
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col p-3 justify-end ">
-                  <div className="text-start space-y- h-24">
+                <div className="relative z-10 h-full flex flex-col p-3 justify-end bottom-5">
+                  <div className="text-start h-24">
                     <h3 className="text-xl font-bold text-muted">{service.title}</h3>
                     <p className="text-white/90 text-sm leading-relaxed">{service.description}</p>
                   </div>
