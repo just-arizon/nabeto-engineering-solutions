@@ -40,8 +40,8 @@ export function Navigation() {
             <span className="h-14 pt-4">
               <img src="/logos/nabeto-logo.svg" alt="Nabeto Logo" className="h-10 w-auto" />
             </span>
-            <span className="grid gap-0 uppercase">
-              <span className="font-extrabold text-xl text-foreground">Nabeto</span>
+            <span className="grid gap-0 uppercase  text-sm ">
+              <span className="font-extrabold text-foreground">Nabeto</span>
               <sub className="font-normal">Engineering</sub>
             </span>
           </Link>

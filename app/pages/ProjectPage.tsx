@@ -69,7 +69,7 @@ export default function ProjectPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative py-20 bg-cover bg-center bg-no-repeat"
+        className="relative py-8 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/industrial-construction-site-with-cranes-and-moder-UHlzyiPgUarcrnUW8VTrff2BdFxDBG.jpg')",
@@ -79,7 +79,7 @@ export default function ProjectPage() {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-start space-y-6">
-            <h1 className="text-3xl lg:text-4xl text-white text-balance">Projects</h1>
+            <h1 className="text-xl lg:text-4xl text-white text-balance">Projects</h1>
           </div>
         </div>
       </section>

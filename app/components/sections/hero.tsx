@@ -61,9 +61,9 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-white">
-          <div className="max-w-2xl px-10">
+          <div className="max-w-2xl lg:px-10 ">
             <motion.h1
-              className="text-4xl lg:text-5xl font-extrabold leading-tight text-balance"
+              className="text-3xl lg:text-5xl font-extrabold leading-tight text-balance"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -102,7 +102,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 mt-10"
+              className="flex flex-col sm:flex-row gap-4 mt-10 hidden lg:flex"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: "easeOut", delay: 0.6 }}
@@ -141,7 +141,7 @@ export default function HeroSection() {
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2 hidden lg:flex">
         {slides.map((_, index) => (
           <button
             key={index}
