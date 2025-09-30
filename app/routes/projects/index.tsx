@@ -71,22 +71,13 @@ export default function ProjectsIndex() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className="relative py-8 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/industrial-construction-site-with-cranes-and-moder-UHlzyiPgUarcrnUW8VTrff2BdFxDBG.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50" />
+      <section className="relative h-[20vh]  flex items-center justify-start bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/industrial-construction-site-with-cranes-and-moder-UHlzyiPgUarcrnUW8VTrff2BdFxDBG.jpg)" }}>
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-start space-y-6">
-            <h1 className="text-xl lg:text-4xl text-white text-balance">Projects</h1>
-          </div>
+          <h1 className="text-lg font-bold text-white text-balance">Projects</h1>
         </div>
       </section>
-
-      {/* Project Grid */}
+       {/* Project Grid */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-6">
@@ -99,7 +90,7 @@ export default function ProjectsIndex() {
             {featuredProjects.map((project) => (
               <div
                 key={project.slug}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
               >
                 <img
                   src={project.image || "/placeholder.svg"}
