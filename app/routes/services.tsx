@@ -1,9 +1,8 @@
-import ServicePage from "../pages/ServicePage";
-
+import { Outlet } from "react-router";
 export function meta() {
   return [{ title: "Services" }];
 }
 
 export default function ServicesRoute() {
-  return <ServicePage />;
+  return <Outlet />;
 }
