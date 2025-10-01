@@ -92,7 +92,7 @@ export default function ServicesIndex() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[20vh]  flex items-center justify-start bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/industrial-construction-site-with-cranes-and-moder-UHlzyiPgUarcrnUW8VTrff2BdFxDBG.jpg)" }}>
+      <section className="relative h-[20vh]  flex items-center justify-start bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeAk4XhHXT_O6XbRdOo_WhHDYt3Y3KV-UvA&s)" }}>
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-lg font-bold text-white text-balance">Services</h1>
@@ -120,7 +120,7 @@ export default function ServicesIndex() {
                 />
 
                   {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-6">
+              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
                 <h3 className="text-white font-bold text-lg text-start text-balance">
                   {service.title}
                 </h3>
@@ -129,7 +129,175 @@ export default function ServicesIndex() {
                     <Button
                       size="sm"
                       variant="secondary"
-                      className="bg-white text-primary hover:bg-white/90 w-full"
+                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
+                    >
+                      View
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+                {/* Status badge */}
+                <div className="absolute top-4 left-4">
+                  <Badge
+                    className={
+                      service.status === "Completed"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-secondary-foreground"
+                    }
+                  >
+                    {service.status}
+                  </Badge>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+       {/* Procurement Grid */}
+      <section className="py-10 ">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-start space-y-2">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
+              Procurement Management
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {designedProjects.map((service) => (
+              <div
+                key={service.slug}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={service.image || "/placeholder.svg"}
+                  alt={`${service.title} service showcase`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                  {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
+                <h3 className="text-white font-bold text-lg text-start text-balance">
+                  {service.title}
+                </h3>
+                <div className="flex flex-col space-y-3">
+                   <Link to={`/services/${service.slug}`} className="w-full">
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
+                    >
+                      View
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+                {/* Status badge */}
+                <div className="absolute top-4 left-4">
+                  <Badge
+                    className={
+                      service.status === "Completed"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-secondary-foreground"
+                    }
+                  >
+                    {service.status}
+                  </Badge>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+       {/* Construction Grid */}
+      <section className="py-10 bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-start space-y-2">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
+              Construction Services
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {designedProjects.map((service) => (
+              <div
+                key={service.slug}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={service.image || "/placeholder.svg"}
+                  alt={`${service.title} service showcase`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                  {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
+                <h3 className="text-white font-bold text-lg text-start text-balance">
+                  {service.title}
+                </h3>
+                <div className="flex flex-col space-y-3">
+                   <Link to={`/services/${service.slug}`} className="w-full">
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
+                    >
+                      View
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+                {/* Status badge */}
+                <div className="absolute top-4 left-4">
+                  <Badge
+                    className={
+                      service.status === "Completed"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-secondary-foreground"
+                    }
+                  >
+                    {service.status}
+                  </Badge>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+        {/* Operations & Management Grid */}
+      <section className="py-10 ">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-start space-y-2">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
+              Operation and Maintenance Services
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {designedProjects.map((service) => (
+              <div
+                key={service.slug}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={service.image || "/placeholder.svg"}
+                  alt={`${service.title} service showcase`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                  {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
+                <h3 className="text-white font-bold text-lg text-start text-balance">
+                  {service.title}
+                </h3>
+                <div className="flex flex-col space-y-3">
+                   <Link to={`/services/${service.slug}`} className="w-full">
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
                     >
                       View
                     </Button>
