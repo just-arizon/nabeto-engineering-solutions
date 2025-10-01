@@ -255,7 +255,7 @@ export default function ServicesIndex() {
         </div>
       </section>
        {/* Services Grid */}
-      <section className="py-20 bg-muted">
+      <section id="engineering-design" className="py-20 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-start space-y-2">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
@@ -311,7 +311,7 @@ export default function ServicesIndex() {
         </div>
       </section>
        {/* Procurement Grid */}
-      <section className="py-20 ">
+      <section id="procurement" className="py-20 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-start space-y-2">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
@@ -367,7 +367,7 @@ export default function ServicesIndex() {
         </div>
       </section>
        {/* Construction Grid */}
-      <section className="py-20 bg-muted">
+      <section id="construction" className="py-20 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-start space-y-2">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
@@ -423,7 +423,7 @@ export default function ServicesIndex() {
         </div>
       </section>
         {/* Operations & Management Grid */}
-      <section className="py-20 ">
+      <section id="operations" className="py-20 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-start space-y-2">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
