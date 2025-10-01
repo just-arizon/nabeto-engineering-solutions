@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
 
 /*  your original data  */
-const featuredProjects = [
+  const featuredProjects = [
   {
     title: "Igando Petroleum Fuel Station",
     location: "Houston, Texas, USA",
@@ -65,6 +65,106 @@ const featuredProjects = [
     ],
     slug: "mushin-petroleum-project",
   },
+  {
+    title: "LPG Retail Station Construction",
+    location: "Lagos, Nigeria",
+    client: "Pacific Gas Solutions",
+    value: "$3.2B",
+    duration: "60 months",
+    status: "Completed",
+    year: "2022",
+    description:
+      "Full EPCM delivery of a liquefied natural gas processing facility with capacity of 8 million tonnes per annum.",
+    image: "/lpg-station.png",
+    services: ["Engineering", "Procurement", "Construction", "Operations"],
+    highlights: [
+      "8 MTPA processing capacity",
+      "Advanced modular construction approach",
+      "Indigenous workforce participation",
+      "World-class safety performance",
+    ],
+    slug: "lpg-retail-station-construction",
+  },
+  {
+    title: "Bulk Tank Construction",
+    location: "Lagos, Nigeria",
+    client: "Pacific Gas Solutions",
+    value: "$3.2B",
+    duration: "60 months",
+    status: "Completed",
+    year: "2022",
+    description:
+      "Full EPCM delivery of a liquefied natural gas processing facility with capacity of 8 million tonnes per annum.",
+    image: "/bulk-tank.png",
+    services: ["Engineering", "Procurement", "Construction", "Operations"],
+    highlights: [
+      "8 MTPA processing capacity",
+      "Advanced modular construction approach",
+      "Indigenous workforce participation",
+      "World-class safety performance",
+    ],
+    slug: "bulk-tank-construction",
+  },
+  {
+    title: "Civil Construction Works",
+    location: "Lagos, Nigeria",
+    client: "Pacific Gas Solutions",
+    value: "$3.2B",
+    duration: "60 months",
+    status: "Completed",
+    year: "2022",
+    description:
+      "Full EPCM delivery of a liquefied natural gas processing facility with capacity of 8 million tonnes per annum.",
+    image: "/tank-construction.png",
+    services: ["Engineering", "Procurement", "Construction", "Operations"],
+    highlights: [
+      "8 MTPA processing capacity",
+      "Advanced modular construction approach",
+      "Indigenous workforce participation",
+      "World-class safety performance",
+    ],
+    slug: "civil-construction-works",
+  },
+  {
+    title: "LPG Underground Tank Construction",
+    location: "Lagos, Nigeria",
+    client: "Pacific Gas Solutions",
+    value: "$3.2B",
+    duration: "60 months",
+    status: "Completed",
+    year: "2022",
+    description:
+      "Full EPCM delivery of a liquefied natural gas processing facility with capacity of 8 million tonnes per annum.",
+    image: "/underground-tank.png",
+    services: ["Engineering", "Procurement", "Construction", "Operations"],
+    highlights: [
+      "8 MTPA processing capacity",
+      "Advanced modular construction approach",
+      "Indigenous workforce participation",
+      "World-class safety performance",
+    ],
+    slug: "lpg-underground-tank-construction",
+  },
+  {
+    title: "Tank Base Construction",
+    location: "Lagos, Nigeria",
+    client: "Pacific Gas Solutions",
+    value: "$3.2B",
+    duration: "60 months",
+    status: "Completed",
+    year: "2022",
+    description:
+      "Full EPCM delivery of a liquefied natural gas processing facility with capacity of 8 million tonnes per annum.",
+    image: "/base-construction.png",
+    services: ["Engineering", "Procurement", "Construction", "Operations"],
+    highlights: [
+      "8 MTPA processing capacity",
+      "Advanced modular construction approach",
+      "Indigenous workforce participation",
+      "World-class safety performance",
+    ],
+    slug: "tank-base-construction",
+  },
 ] as const;
 
 export default function ProjectsIndex() {
@@ -80,30 +180,31 @@ export default function ProjectsIndex() {
        {/* Project Grid */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">
+          <div className="text-start space-y-6">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
               Our Executed Projects
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <div
-                key={project.slug}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-              >
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={`${project.title} project showcase`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:my-10">
+          {featuredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="group relative rounded-2xl overflow-hidden cursor-pointer"
+            >
+              <img
+                src={project.image || "/placeholder.svg"}
+                alt={`${project.title} project showcase`}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4 p-6">
-                  <h3 className="text-white font-bold text-lg text-center text-balance">
-                    {project.title}
-                  </h3>
-                  <Link to={`/projects/${project.slug}`} className="w-full">
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/40  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-6">
+                <h3 className="text-white font-bold text-lg text-start text-balance">
+                  {project.title}
+                </h3>
+                <div className="flex flex-col space-y-3">
+                   <Link to={`/projects/${project.slug}`} className="w-full">
                     <Button
                       size="sm"
                       variant="secondary"
@@ -113,22 +214,26 @@ export default function ProjectsIndex() {
                     </Button>
                   </Link>
                 </div>
-
-                {/* Status badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge
-                    className={
-                      project.status === "Completed"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground"
-                    }
-                  >
-                    {project.status}
-                  </Badge>
-                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Status Badge */}
+              <div className="absolute top-4 left-4">
+                <Badge
+                  variant={
+                    project.status === "Completed" ? "default" : "secondary"
+                  }
+                  className={
+                    project.status === "Completed"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground"
+                  }
+                >
+                  {project.status}
+                </Badge>
+              </div>
+            </div>
+          ))}
+        </div>
         </div>
       </section>
     </main>
