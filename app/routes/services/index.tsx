@@ -241,6 +241,8 @@ const operationServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "operations",
+
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -261,6 +263,8 @@ const operationServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "operations",
+
   },
 
 ] as const;

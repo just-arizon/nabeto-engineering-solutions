@@ -14,7 +14,7 @@ import { Link } from "react-router";
     year: "2023",
     description:
       "Complete EPCM services for a world-class petrochemical complex expansion including new production units, utilities, and infrastructure.",
-    image: "/igando.png",
+    image: "/petrosafe.png",
     services: ["Engineering", "Procurement", "Construction", "Commissioning"],
     highlights: [
       "Zero lost-time incidents over 48 months",
@@ -35,7 +35,7 @@ import { Link } from "react-router";
     year: "2024",
     description:
       "Engineering and construction management for a 500MW offshore wind farm including turbine installation and grid connection.",
-    image: "/petrosafe.png",
+    image: "/igando.png ",
     services: ["Engineering", "Construction Management", "Operations Support"],
     highlights: [
       "500MW renewable energy capacity",
@@ -186,7 +186,7 @@ export default function ProjectsIndex() {
             </h2>
           </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:my-10 ">
           {featuredProjects.map((project, index) => (
             <div
               key={index}
