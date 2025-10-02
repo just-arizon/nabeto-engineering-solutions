@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Wrench, ShoppingCart, HardHat, Cog } from "lucide-react"
 // import Image from "next/image"
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"
 
 export function ServiceSection() {
   const services = [
@@ -82,13 +83,14 @@ export function ServiceSection() {
             )
           })}
         </div>
-
-        <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            View All Services
-            {/* <ArrowRight className="ml-2 h-5 w-5" /> */}
-          </Button>
-        </div>
+<div className="flex justify-center">
+          <Link to={"/services"} className="text-center ">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer">
+              View All Services
+              {/* <ArrowRight className="ml-2 h-5 w-5" /> */}
+            </Button>
+          </Link>
+</div>
       </div>
     </section>
   )

@@ -2,6 +2,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
 
+
+const sectionMeta = {
+  "engineering-design": { title: "Engineering Design", bg: "bg-muted" },
+  "procurement":          { title: "Procurement Management", bg: "bg-background" },
+  "construction":         { title: "Construction Services", bg: "bg-muted" },
+  "operations":           { title: "Operation & Maintenance", bg: "bg-background" },
+} as const;
+
 /*  your original data  */
 const designedProjects = [
   {
@@ -24,6 +32,7 @@ const designedProjects = [
     ],
     /* slug used for detail link */
     slug: "igando-petroleum-fuel-station",
+    section: "engineering-design",
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -44,6 +53,8 @@ const designedProjects = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "engineering-design",
+
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -64,6 +75,8 @@ const designedProjects = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "engineering-design",
+
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -84,6 +97,7 @@ const designedProjects = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "engineering-design",
   },
 
 ] as const;
@@ -109,6 +123,8 @@ const procurementServices = [
     ],
     /* slug used for detail link */
     slug: "igando-petroleum-fuel-station",
+    section: "procurement",
+
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -129,6 +145,8 @@ const procurementServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "procurement",
+
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -149,6 +167,7 @@ const procurementServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "procurement",
   },
 
 
@@ -175,6 +194,7 @@ const constructionServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "construction",
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
@@ -195,6 +215,7 @@ const constructionServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
+    section: "construction",
   },
 
 ] as const;
@@ -244,6 +265,22 @@ const operationServices = [
 
 ] as const;
 
+const allServices = [
+  ...designedProjects.map((s) => ({ ...s, category: "Engineering Design" })),
+  ...procurementServices.map((s) => ({ ...s, category: "Procurement" })),
+  ...constructionServices.map((s) => ({ ...s, category: "Construction" })),
+  ...operationServices.map((s) => ({ ...s, category: "Operations" })),
+] as const;
+
+
+type Section = keyof typeof sectionMeta;
+
+const servicesBySection = (Object.keys(sectionMeta) as Section[]).map((key) => ({
+  id: key,
+  ...sectionMeta[key],
+  items: allServices.filter((s) => s.section === key),
+}));
+
 export default function ServicesIndex() {
   return (
     <main className="min-h-screen">
@@ -254,230 +291,60 @@ export default function ServicesIndex() {
           <h1 className="text-lg font-bold text-white text-balance">Services</h1>
         </div>
       </section>
-       {/* Services Grid */}
-      <section id="engineering-design" className="py-20 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-start space-y-2">
+     {servicesBySection.map((sec) => (
+        <section
+          key={sec.id}
+          id={sec.id}
+          className={`py-20 ${sec.bg}`} // muted / white alternating
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
-              Engineering Design
+              {sec.title}
             </h2>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {designedProjects.map((service) => (
-              <div
-                key={service.slug}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-              >
-                <img
-                  src={service.image || "/placeholder.svg"}
-                  alt={`${service.title} service showcase`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {sec.items.map((s) => (
+                <div
+                  key={s.slug}
+                  className="group relative rounded-2xl overflow-hidden aspect-[4/3]"
+                >
+                  <img
+                    src={s.image || "/placeholder.svg"}
+                    alt={s.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
 
-                  {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
-                {/* <h3 className="text-white font-bold text-lg text-start text-balance">
-                  {service.title}
-                </h3> */}
-                <div className="flex flex-col space-y-3">
-                   <Link to={`/services/${service.slug}`} className="w-full">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
+                  <div className="absolute inset-0 bg-black/20 flex flex-col items-start justify-end space-y-1 p-3">
+                    <Badge className="text-xs">{sec.title}</Badge>
+                    <Link to={`/services/${s.slug}`} className="w-full">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        className="bg-white text-primary hover:bg-white/90 w-full text-xs"
+                      >
+                        View
+                      </Button>
+                    </Link>
+                  </div>
+
+                  <div className="absolute top-3 left-3">
+                    <Badge
+                      className={
+                        s.status === "Completed"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary text-secondary-foreground"
+                      }
                     >
-                      View
-                    </Button>
-                  </Link>
+                      {s.status}
+                    </Badge>
+                  </div>
                 </div>
-              </div>
-
-                {/* Status badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge
-                    className={
-                      service.status === "Completed"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground"
-                    }
-                  >
-                    {service.status}
-                  </Badge>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-       {/* Procurement Grid */}
-      <section id="procurement" className="py-20 ">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-start space-y-2">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
-              Procurement Management
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {procurementServices.map((service) => (
-              <div
-                key={service.slug}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-              >
-                <img
-                  src={service.image || "/placeholder.svg"}
-                  alt={`${service.title} service showcase`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-
-                  {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
-                {/* <h3 className="text-white font-bold text-lg text-start text-balance">
-                  {service.title}
-                </h3> */}
-                <div className="flex flex-col space-y-3">
-                   <Link to={`/services/${service.slug}`} className="w-full">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
-                    >
-                      View
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-                {/* Status badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge
-                    className={
-                      service.status === "Completed"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground"
-                    }
-                  >
-                    {service.status}
-                  </Badge>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-       {/* Construction Grid */}
-      <section id="construction" className="py-20 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-start space-y-2">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
-              Construction Services
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {constructionServices.map((service) => (
-              <div
-                key={service.slug}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-              >
-                <img
-                  src={service.image || "/placeholder.svg"}
-                  alt={`${service.title} service showcase`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-
-                  {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
-                {/* <h3 className="text-white font-bold text-lg text-start text-balance">
-                  {service.title}
-                </h3> */}
-                <div className="flex flex-col space-y-3">
-                   <Link to={`/services/${service.slug}`} className="w-full">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
-                    >
-                      View
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-                {/* Status badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge
-                    className={
-                      service.status === "Completed"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground"
-                    }
-                  >
-                    {service.status}
-                  </Badge>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-        {/* Operations & Management Grid */}
-      <section id="operations" className="py-20 ">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-start space-y-2">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
-              Operation and Maintenance Services
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {operationServices.map((service) => (
-              <div
-                key={service.slug}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-              >
-                <img
-                  src={service.image || "/placeholder.svg"}
-                  alt={`${service.title} service showcase`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-
-                  {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/20  transition-opacity duration-300 flex flex-col items-start justify-end space-y-1 p-3">
-                {/* <h3 className="text-white font-bold text-lg text-start text-balance">
-                  {service.title}
-                </h3> */}
-                <div className="flex flex-col space-y-3">
-                   <Link to={`/services/${service.slug}`} className="w-full">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="bg-white text-primary hover:bg-white/90 w-full text-xs"
-                    >
-                      View
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-                {/* Status badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge
-                    className={
-                      service.status === "Completed"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground"
-                    }
-                  >
-                    {service.status}
-                  </Badge>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
     </main>
   );
 }
+export { designedProjects, procurementServices, constructionServices, operationServices };
