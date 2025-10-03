@@ -81,8 +81,8 @@ export function Navigation() {
 
           {/* Contact Button (Desktop) */}
           <div className="hidden md:block">
-            <Link to={"/#contact"}>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Link to={"/contact"}>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer">
                 Contact Us
               </Button>
             </Link>

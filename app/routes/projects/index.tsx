@@ -35,7 +35,7 @@ import { Link } from "react-router";
     year: "2024",
     description:
       "Engineering and construction management for a 500MW offshore wind farm including turbine installation and grid connection.",
-    image: "/igando.png ",
+    image: "/petrosafe.png",
     services: ["Engineering", "Construction Management", "Operations Support"],
     highlights: [
       "500MW renewable energy capacity",
