@@ -9,6 +9,9 @@ export default [
     index("routes/services/index.tsx"),     
     route(":slug", "routes/services/$slug.tsx"),
   ]),
+  route("policies", "routes/policies.tsx", [
+    index("routes/policies/index.tsx"),     
+  ]),
 
 
   route("projects", "routes/projects.tsx", [
