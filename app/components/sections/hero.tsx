@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -107,20 +108,24 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: "easeOut", delay: 0.6 }}
             >
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              >
-                Explore Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent"
-              >
-                View Projects
-              </Button>
+              <Link to="/services">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                >
+                  Explore Our Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/projects">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent"
+                >
+                  View Projects
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

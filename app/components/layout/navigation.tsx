@@ -153,12 +153,11 @@ export function Navigation() {
               ))}
 
               <div className="pt-2">
-                <Button
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact Us
-                </Button>
+                <Link to={"/contact"}>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer">
+                Contact Us
+              </Button>
+            </Link>
               </div>
             </div>
           </div>
