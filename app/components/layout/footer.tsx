@@ -47,10 +47,25 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-emerald-400">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li className="text-slate-300">Engineering Design</li>
-              <li className="text-slate-300">Procurement Management</li>
-              <li className="text-slate-300">Construction Services</li>
-              <li className="text-slate-300">Operations & Maintenance</li>
+              <li className="text-slate-300">
+                <a href="/#" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Engineering Design
+                </a>
+              </li>
+              <li className="text-slate-300">
+                <a href="/#" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Procurement Management
+                </a>
+              </li>
+              <li className="text-slate-300">
+                <a href="/#" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Construction Services
+                </a>
+              </li>
+              <li className="text-slate-300">
+                <a href="/#" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Operations & Maintenance
+                </a></li>
             </ul>
           </div>
 
