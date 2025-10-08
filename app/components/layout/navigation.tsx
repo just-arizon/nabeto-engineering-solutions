@@ -42,7 +42,7 @@ export function Navigation() {
             </span>
             <span className="grid gap-0 uppercase  text-sm ">
               <span className="font-extrabold text-foreground">Nabeto</span>
-              <sub className="font-normal">Engineering</sub>
+              <sub className="font-normal">Engineering Limited</sub>
             </span>
           </Link>
 

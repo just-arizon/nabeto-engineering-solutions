@@ -75,15 +75,16 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-emerald-400" />
-                <span className="text-slate-300">+1 (555) 123-4567</span>
+                <span className="text-slate-300">+234 (080) 335-46896</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-emerald-400" />
-                <span className="text-slate-300">info@epcmsolutions.com</span>
+                <span className="text-slate-300">info@nabetoengineering.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-emerald-400" />
-                <span className="text-slate-300">123 Industrial Blvd, Houston, TX</span>
+                <span className="text-slate-300">25, Eric Moore Close,
+Surulere, Lagos.</span>
               </div>
             </div>
           </div>
