@@ -7,7 +7,7 @@ const ContactPage: React.FC = () => {
             <section style={{ marginBottom: '1.5rem' }}>
                 <h2>Contact Information</h2>
                 <p>
-                    <strong>Email:</strong> info@yourcompany.com<br />
+                    <strong>Email:</strong> info@nabetoengineering.com<br />
                     <strong>Phone:</strong> +234 (080) 335-46896
                 </p>
             </section>

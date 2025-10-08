@@ -14,9 +14,9 @@ const sectionMeta = {
 const designedProjects = [
   {
     title: "Igando Petroleum Fuel Station",
-    location: "Houston, Texas, USA",
+    location: "Igando, Lagos, Nigeria",
     client: "Global Energy Corp",
-    value: "$2.8B",
+    value: "₦2.8B",
     duration: "48 months",
     status: "Completed",
     year: "2023",
@@ -36,9 +36,9 @@ const designedProjects = [
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
-    location: "North Sea, UK",
+    location: "Mushin, Lagos, Nigeria",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -58,9 +58,9 @@ const designedProjects = [
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
-    location: "North Sea, UK",
+    location: "Port Harcourt, Rivers, Nigeria",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -80,9 +80,9 @@ const designedProjects = [
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
-    location: "North Sea, UK",
+    location: "Warri, Delta, Nigeria",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -105,9 +105,9 @@ const designedProjects = [
 const procurementServices = [
   {
     title: "Igando Petroleum Fuel Station",
-    location: "Houston, Texas, USA",
+    location: "Igando, Lagos, Nigeria",
     client: "Global Energy Corp",
-    value: "$2.8B",
+    value: "₦2.8B",
     duration: "48 months",
     status: "Completed",
     year: "2023",
@@ -121,16 +121,14 @@ const procurementServices = [
       "15% cost savings through optimization",
       "Environmental compliance exceeded targets",
     ],
-    /* slug used for detail link */
     slug: "igando-petroleum-fuel-station",
     section: "procurement",
-
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
-    location: "North Sea, UK",
+    location: "Mushin, Lagos, Nigeria",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -146,13 +144,12 @@ const procurementServices = [
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
     section: "procurement",
-
   },
   {
     title: "Petrosafe Underground LPG Tank Installation",
-    location: "North Sea, UK",
+    location: "Port Harcourt, Rivers, Nigeria",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -179,7 +176,7 @@ const constructionServices = [
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -200,7 +197,7 @@ const constructionServices = [
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -226,7 +223,7 @@ const operationServices = [
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -248,7 +245,7 @@ const operationServices = [
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
-    value: "$1.5B",
+    value: "₦1.5B",
     duration: "36 months",
     status: "In Progress",
     year: "2024",
@@ -299,7 +296,7 @@ export default function ServicesIndex() {
         <section
           key={sec.id}
           id={sec.id}
-          className={`py-20 ${sec.bg}`} // muted / white alternating
+          className={`py-20 ₦{sec.bg}`} // muted / white alternating
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
@@ -320,7 +317,7 @@ export default function ServicesIndex() {
 
                   <div className="absolute inset-0 bg-black/20 flex flex-col items-start justify-end space-y-1 p-3">
                     <Badge className="text-xs">{sec.title}</Badge>
-                    <Link to={`/services/${s.slug}`} className="w-full">
+                    <Link to={`/services/₦{s.slug}`} className="w-full">
                       <Button
                         size="sm"
                         variant="secondary"
