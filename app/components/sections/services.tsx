@@ -59,19 +59,19 @@ export function ServiceSection() {
     },
     {
       icon: Cog,
-      title: "Operations & Maintenance",
+      title: "Electrical Services",
       description:
-        "Comprehensive O&M services to ensure optimal performance and longevity of your assets.",
+        "We also offer specialized electrical services to support your industrial operations.",
       features: [
         "Preventive Maintenance",
         "Performance Optimization",
         "Asset Management",
       ],
-      image: "/operations.png",
+      image: "/electrical-services.png",
     },
     {
       icon: Cog,
-      title: "Operations & Maintenance",
+      title: "Tank Operations & Maintenance",
       description:
         "Comprehensive O&M services to ensure optimal performance and longevity of your assets.",
       features: [
@@ -79,7 +79,7 @@ export function ServiceSection() {
         "Performance Optimization",
         "Asset Management",
       ],
-      image: "/operations.png",
+      image: "/tank-maintainance.png",
     },
   ];
 
