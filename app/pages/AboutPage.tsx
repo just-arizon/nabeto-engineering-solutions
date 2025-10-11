@@ -35,7 +35,7 @@ const team = [
     qualification: "B.Eng. Electrical/Electronics Engineering",
     certification: "Chartered Engineer (COREN), FIPMA, MBA, MNSE, MNIEE",
     nationality: "Nigerian",
-    // photo: "/placeholder.svg?height=400&width=400&text=Amina",
+    photo: "/ralph-img.jpg",
   },
   {
     name: "Evelyne Chinenye Chinweuba",
