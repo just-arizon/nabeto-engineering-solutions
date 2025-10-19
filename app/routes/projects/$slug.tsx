@@ -157,7 +157,7 @@ const details: Record<string, Project> = {
 /* ----------  CAROUSEL SUB-COMPONENT  ---------- */
 function ImageCarousel({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused]  = useState(false);
 
   useEffect(() => {
     if (isPaused) return;
