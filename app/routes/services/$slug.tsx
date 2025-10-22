@@ -4,60 +4,125 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-/* import the arrays from index file */
-import {
-  designedProjects,
-  procurementServices,
-  constructionServices,
-  operationServices,
-} from "./index";
 
-const allServices = [
-  ...designedProjects,
-  ...procurementServices,
-  ...constructionServices,
-  ...operationServices,
-];
+/* 1.  four complete page objects  */
+const servicePages: Record<string, {
+  title: string;
+  hero: string;
+  intro: string;
+  points: string[];
+  services?: string[];
+  highlights?: string[];
+}> = {
+  "engineering-design": {
+    title: "Engineering Design",
+    hero: "/engineering-hero.jpg",
+    intro: "Full-scope engineering from concept to commissioning.",
+    points: [
+      "Process & conceptual design",
+      "3D modelling and digital twins",
+      "FEED / Detailed engineering",
+      "Safety & risk studies (HAZOP, SIL, QRA)",
+      "Multi-discipline 3D coordination",
+      "As-built and hand-over documentation",
+    ],
+    services: ["Process", "Mechanical", "Electrical", "Instrumentation"],
+    highlights: ["ISO 9001 certified workflows", "Zero-lost-time projects"],
+  },
+  "procurement-management": {
+    title: "Procurement Management",
+    hero: "/procurement-hero.jpg",
+    intro: "Strategic sourcing and supply-chain excellence.",
+    points: [
+      "Global vendor qualification",
+      "Purchase-order management",
+      "Inspection & expediting",
+      "Logistics and customs clearance",
+      "Materials management on site",
+    ],
+    services: ["Sourcing", "Expediting", "Logistics", "Inspection"],
+    highlights: ["15 % cost savings tracked", "On-time delivery > 97 %"],
+  },
+  "construction-services": {
+    title: "Construction Services",
+    hero: "/construction-hero.jpg",
+    intro: "Safe, on-time and on-budget site execution.",
+    points: [
+      "Construction management & supervision",
+      "Site safety leadership",
+      "Sub-contractor management",
+      "Progress and cost control",
+      "Mechanical completion & hand-over",
+    ],
+    services: ["Management", "Supervision", "Safety", "QC/QA"],
+    highlights: ["Zero-harm mindset", "Delivered 2 months ahead"],
+  },
+  "operations-maintenance": {
+    title: "Operations & Maintenance",
+    hero: "/operations-hero.jpg",
+    intro: "Asset performance and reliability for the full lifecycle.",
+    points: [
+      "Preventive & predictive maintenance",
+      "Asset performance management",
+      "Turnaround / shutdown planning",
+      "Spare-parts optimisation",
+      "Remote monitoring & diagnostics",
+    ],
+    services: ["Maintenance", "Reliability", "Turnarounds", "Training"],
+    highlights: ["97 % equipment availability", "Remote 24/7 support"],
+  },
+};
 
+/* 2.  single slug component  */
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const data = allServices.find((s) => s.slug === slug);
+  const page = servicePages[slug!];
 
-  if (!data)
+  if (!page) {
     return (
       <div className="container mx-auto px-4 py-8 text-center">
-        <h1 className="text-2xl font-bold mb-2">Service case not found</h1>
+        <h1 className="text-2xl font-bold mb-2">Service page not found</h1>
         <Link to="/services" className="text-primary hover:underline">
           ← Back to services
         </Link>
       </div>
     );
+  }
+
+  const bullets = [...page.points, ...(page.highlights ?? [])];
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-          <Link to="/services">Services</Link>
-          <span>/</span>
-          <span className="text-foreground">{data.title}</span>
-        </nav>
+      {/* HERO – uses page.hero  */}
+      <section
+        className="relative h-[40vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${page.hero})` }}
+      >
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative text-3xl lg:text-5xl font-bold text-white text-balance"
+        >
+          {page.title}
+        </motion.h1>
+      </section>
 
+      {/*  keep your exact two-column layout  */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 container mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* image */}
+          {/*  LEFT – image placeholder  */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="rounded-xl overflow-hidden border border-border"
           >
-            <img
-              src={data.image || "/placeholder.svg"}
-              alt={data.title}
-              className="w-full aspect-video object-cover"
-            />
+            <img src="/placeholder.svg?height=600&width=900" alt={page.title} className="w-full aspect-video object-cover" />
           </motion.div>
 
-          {/* content */}
+          {/*  RIGHT – narrative  */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -65,54 +130,38 @@ export default function ServiceDetail() {
             className="space-y-6"
           >
             <header>
-              <h1 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">{data.title}</h1>
-              <p className="text-muted-foreground mt-2">{data.location} • {data.year}</p>
+              <h1 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">{page.title}</h1>
+              <p className="text-muted-foreground mt-2">{page.intro}</p>
             </header>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Card className="p-4 border-border">
-                <p className="text-sm text-muted-foreground">Client</p>
-                <p className="font-semibold">{data.client}</p>
-              </Card>
-              <Card className="p-4 border-border">
-                <p className="text-sm text-muted-foreground">Value</p>
-                <p className="font-semibold">{data.value}</p>
-              </Card>
-            </div>
+            <Card className="p-4 border-border">
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                {bullets.map((b, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
 
-            <div>
-              <h2 className="text-xl font-semibold mb-2">Scope</h2>
-              <p className="text-muted-foreground leading-relaxed">{data.scope}</p>
-            </div>
-
-            {data.services && (
+            {page.services && (
               <div>
-                <h2 className="text-xl font-semibold mb-2">Services provided</h2>
+                <h2 className="text-xl font-semibold mb-2">Disciplines</h2>
                 <div className="flex flex-wrap gap-2">
-                  {data.services.map((s) => (
+                  {page.services.map((s) => (
                     <Badge key={s} variant="secondary">{s}</Badge>
                   ))}
                 </div>
               </div>
             )}
 
-            {data.highlights && (
-              <div>
-                <h2 className="text-xl font-semibold mb-2">Key highlights</h2>
-                <ul className="space-y-2">
-                  {data.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="pt-4">
+            <div className="flex gap-3">
               <Button asChild>
-                <Link to="/services">← Back to all services</Link>
+                <Link to="/services">← All Services</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </motion.div>
