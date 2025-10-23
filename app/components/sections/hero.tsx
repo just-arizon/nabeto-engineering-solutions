@@ -57,7 +57,7 @@ export default function HeroSection() {
       </div>
 
       {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full">
@@ -69,7 +69,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              One stop shop engineering{" "}
+              One Stop Shop Engineering{" "}
               <span className="text-primary">Solution Provider</span>
             </motion.h1>
 
@@ -108,7 +108,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: "easeOut", delay: 0.6 }}
             >
-              <Link to="/services">
+              <Link to="/services" className="">
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground"
