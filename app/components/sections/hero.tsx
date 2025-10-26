@@ -79,7 +79,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             >
-              Comprehensive EPCM solutions delivering world-class engineering,
+              Comprehensive EPC solutions delivering world-class engineering,
               procurement, construction, operation, and maintenance services for
               industrial projects worldwide.
             </motion.p>

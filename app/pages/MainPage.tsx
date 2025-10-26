@@ -6,6 +6,7 @@ import { ServiceSection } from "~/components/sections/services";
 import { ProjectSection } from "~/components/sections/project";
 import { motion } from "framer-motion";
 import HeroSection from "~/components/sections/hero";
+import { FAQ } from "~/components/layout/faqs";
 
 export default function Main() {
   const companies = [
@@ -65,9 +66,9 @@ export default function Main() {
         <ProjectSection />
       </div>
       
-        {/* Services Section */}
+        {/* Faqs Section */}
       <div className="">
-        {/* <ContactSection /> */}
+        <FAQ />
       </div>
 
     </div>

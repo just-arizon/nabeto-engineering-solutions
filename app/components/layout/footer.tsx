@@ -3,7 +3,7 @@ import { Building2, Mail, Phone, MapPin } from "lucide-react"
 export function Footer() {
   const date = new Date()
   const year= date.getFullYear()
-  console.log(year);
+  
   
   return (
     <footer className="bg-slate-900 text-white">
@@ -97,7 +97,7 @@ Surulere, Lagos.</span>
         {/* Bottom Bar */}
         <div className="border-t border-slate-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="grid gap-2">
-          <p className="text-slate-400 text-sm">© { year } EPCM Solutions. All rights reserved.</p>
+          <p className="text-slate-400 text-sm">© { year } EPC Solutions. All rights reserved.</p>
           <p className="text-slate-400 text-sm">Designed and developed by <a href="https://www.facebook.com/arizons.dev/" target="_blank" className="text-emerald-400 hover:text-emerald-600 text-sm transition-colors font-bold">AriZon</a></p>
           
           </div>

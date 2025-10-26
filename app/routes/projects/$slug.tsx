@@ -29,7 +29,7 @@ const details: Record<string, Project> = {
     location: "Lagos, Nigeria",
     client: "Petrosafe",
     value: "₦3M",
-    scope: "Complete EPCM services for a world-class petrochemical complex expansion including new production units, utilities, and infrastructure.",
+    scope: "Complete EPC services for a world-class petrochemical complex expansion including new production units, utilities, and infrastructure.",
     completed: "2021",
     images: ["/igando.png"],
     services: ["Engineering", "Procurement", "Construction", "Commissioning"],
@@ -66,7 +66,6 @@ const details: Record<string, Project> = {
     images: ["/mushin.png"],
     services: ["Engineering", "Procurement", "Construction", "Operations"],
     highlights: [
-      "8 MTPA processing capacity",
       "Advanced modular construction approach",
       "Indigenous workforce participation",
       "World-class safety performance",
@@ -266,7 +265,7 @@ export default function ProjectDetail() {
             <div className="grid sm:grid-cols-2 gap-4">
               <Card className="p-4 border-border">
                 <p className="text-sm text-muted-foreground">Client</p>
-                <p className="font-semibold">{data.client}</p>
+                <p className="font-bold uppercase">{data.client}</p>
               </Card>
               <Card className="p-4 border-border">
                 <p className="text-sm text-muted-foreground">Project value</p>
