@@ -62,7 +62,7 @@ export function FAQ() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
             <p className="text-lg text-muted-foreground">
-              Find answers to common questions about our EPCM services and project delivery
+              Find answers to common questions about our EPC services and project delivery
             </p>
           </div>
 

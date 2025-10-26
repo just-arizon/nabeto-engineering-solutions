@@ -111,7 +111,7 @@ export default function HeroSection() {
               <Link to="/services" className="">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
                 >
                   Explore Our Services
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  className="border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent w-full"
                 >
                   View Projects
                 </Button>
