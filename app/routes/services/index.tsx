@@ -12,7 +12,8 @@ const sectionMeta = {
 
 /*  your original data  */
 const designedProjects = [
-  {
+  { 
+    id: 1,
     title: "Igando Petroleum Fuel Station",
     location: "Igando, Lagos, Nigeria",
     client: "Global Energy Corp",
@@ -31,10 +32,11 @@ const designedProjects = [
       "Environmental compliance exceeded targets",
     ],
     /* slug used for detail link */
-    slug: "igando-petroleum-fuel-station",
+    slug: "design of Igando station",
     section: "engineering-design",
   },
   {
+    id: 2,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "Mushin, Lagos, Nigeria",
     client: "Renewable Energy Partners",
@@ -57,6 +59,7 @@ const designedProjects = [
 
   },
   {
+    id: 3,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "Port Harcourt, Rivers, Nigeria",
     client: "Renewable Energy Partners",
@@ -79,6 +82,7 @@ const designedProjects = [
 
   },
   {
+    id: 4,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "Warri, Delta, Nigeria",
     client: "Renewable Energy Partners",
@@ -104,6 +108,7 @@ const designedProjects = [
 
 const procurementServices = [
   {
+    id: 1,
     title: "Igando Petroleum Fuel Station",
     location: "Igando, Lagos, Nigeria",
     client: "Global Energy Corp",
@@ -125,6 +130,7 @@ const procurementServices = [
     section: "procurement",
   },
   {
+    id: 2,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "Mushin, Lagos, Nigeria",
     client: "Renewable Energy Partners",
@@ -146,6 +152,7 @@ const procurementServices = [
     section: "procurement",
   },
   {
+    id: 3,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "Port Harcourt, Rivers, Nigeria",
     client: "Renewable Energy Partners",
@@ -169,10 +176,10 @@ const procurementServices = [
 
 
 ] as const;
-
 const constructionServices = [
 
   {
+    id: 1,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
@@ -194,6 +201,7 @@ const constructionServices = [
     section: "construction",
   },
   {
+    id: 2,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
@@ -213,13 +221,12 @@ const constructionServices = [
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
     section: "construction",
-  },
-
-] as const;
+  }
+]
 
 const operationServices = [
-
   {
+    id:1,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
@@ -242,6 +249,7 @@ const operationServices = [
 
   },
   {
+    id: 2,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
@@ -296,7 +304,7 @@ export default function ServicesIndex() {
         <section
           key={sec.id}
           id={sec.id}
-          className={`py-20 ₦{sec.bg}`} // muted / white alternating
+          className={`py-20 ${sec.bg}`} // muted / white alternating
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
@@ -317,7 +325,7 @@ export default function ServicesIndex() {
 
                   <div className="absolute inset-0 bg-black/20 flex flex-col items-start justify-end space-y-1 p-3">
                     <Badge className="text-xs">{sec.title}</Badge>
-                    <Link to={`/services/₦{s.slug}`} className="w-full">
+                    <Link to={`/services/${s.section}/${s.id}`} className="w-full">
                       <Button
                         size="sm"
                         variant="secondary"
