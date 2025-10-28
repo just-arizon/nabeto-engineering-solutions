@@ -21,9 +21,9 @@ const pool = [
 /* 3.  human-readable titles  */
 const titles: Record<string, string> = {
   'engineering-design': 'Engineering Design',
-  'procurement': 'Procurement Management',
-  'construction': 'Construction Services',
-  'operations': 'Operations & Maintenance',
+  'procurement-management': 'Procurement Management',
+  'construction-services': 'Construction Services',
+  'operations-&-maintainance': 'Operations & Maintenance',
 };
 
 export default function ServiceSectionIndex() {

@@ -2,17 +2,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
 
-
 const sectionMeta = {
   "engineering-design": { title: "Engineering Design", bg: "bg-muted" },
-  "procurement":          { title: "Procurement Management", bg: "bg-background" },
-  "construction":         { title: "Construction Services", bg: "bg-muted" },
-  "operations":           { title: "Operation & Maintenance", bg: "bg-background" },
+  procurement: { title: "Procurement Management", bg: "bg-background" },
+  construction: { title: "Construction Services", bg: "bg-muted" },
+  operations: { title: "Operation & Maintenance", bg: "bg-background" },
 } as const;
 
 /*  your original data  */
 const designedProjects = [
-  { 
+  {
     id: 1,
     title: "Igando Petroleum Fuel Station",
     location: "Igando, Lagos, Nigeria",
@@ -56,7 +55,6 @@ const designedProjects = [
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
     section: "engineering-design",
-
   },
   {
     id: 3,
@@ -79,7 +77,6 @@ const designedProjects = [
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
     section: "engineering-design",
-
   },
   {
     id: 4,
@@ -103,7 +100,6 @@ const designedProjects = [
     slug: "petrosafe-underground-lpg-tank-installation",
     section: "engineering-design",
   },
-
 ] as const;
 
 const procurementServices = [
@@ -127,7 +123,7 @@ const procurementServices = [
       "Environmental compliance exceeded targets",
     ],
     slug: "igando-petroleum-fuel-station",
-    section: "procurement",
+    section: "procurement-management",
   },
   {
     id: 2,
@@ -149,7 +145,7 @@ const procurementServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
-    section: "procurement",
+    section: "procurement-management",
   },
   {
     id: 3,
@@ -171,13 +167,10 @@ const procurementServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
-    section: "procurement",
+    section: "procurement-management",
   },
-
-
 ] as const;
 const constructionServices = [
-
   {
     id: 1,
     title: "Petrosafe Underground LPG Tank Installation",
@@ -198,7 +191,7 @@ const constructionServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
-    section: "construction",
+    section: "construction-services",
   },
   {
     id: 2,
@@ -220,13 +213,13 @@ const constructionServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
-    section: "construction",
-  }
-]
+    section: "construction-services",
+  },
+];
 
 const operationServices = [
   {
-    id:1,
+    id: 1,
     title: "Petrosafe Underground LPG Tank Installation",
     location: "North Sea, UK",
     client: "Renewable Energy Partners",
@@ -245,8 +238,7 @@ const operationServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
-    section: "operations",
-
+    section: "operations-&-maintainance",
   },
   {
     id: 2,
@@ -268,39 +260,52 @@ const operationServices = [
       "Local workforce development program",
     ],
     slug: "petrosafe-underground-lpg-tank-installation",
-    section: "operations",
-
+    section: "operations-&-maintainance",
   },
-
 ] as const;
 
 const allServices = [
   ...designedProjects.map((s) => ({ ...s, category: "Engineering Design" })),
-  ...procurementServices.map((s) => ({ ...s, category: "Procurement" })),
-  ...constructionServices.map((s) => ({ ...s, category: "Construction" })),
+  ...procurementServices.map((s) => ({
+    ...s,
+    category: "Procurement Management",
+  })),
+  ...constructionServices.map((s) => ({
+    ...s,
+    category: "Construction Services",
+  })),
   ...operationServices.map((s) => ({ ...s, category: "Operations" })),
 ] as const;
 
-
 type Section = keyof typeof sectionMeta;
 
-const servicesBySection = (Object.keys(sectionMeta) as Section[]).map((key) => ({
-  id: key,
-  ...sectionMeta[key],
-  items: allServices.filter((s) => s.section === key),
-}));
+const servicesBySection = (Object.keys(sectionMeta) as Section[]).map(
+  (key) => ({
+    id: key,
+    ...sectionMeta[key],
+    items: allServices.filter((s) => s.section === key),
+  })
+);
 
 export default function ServicesIndex() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[20vh]  flex items-center justify-start bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeAk4XhHXT_O6XbRdOo_WhHDYt3Y3KV-UvA&s)" }}>
+      <section
+        className="relative h-[20vh]  flex items-center justify-start bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeAk4XhHXT_O6XbRdOo_WhHDYt3Y3KV-UvA&s)",
+        }}
+      >
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-lg font-bold text-white text-balance">Services</h1>
+          <h1 className="text-lg font-bold text-white text-balance">
+            Services
+          </h1>
         </div>
       </section>
-     {servicesBySection.map((sec) => (
+      {servicesBySection.map((sec) => (
         <section
           key={sec.id}
           id={sec.id}
@@ -325,7 +330,10 @@ export default function ServicesIndex() {
 
                   <div className="absolute inset-0 bg-black/20 flex flex-col items-start justify-end space-y-1 p-3">
                     <Badge className="text-xs">{sec.title}</Badge>
-                    <Link to={`/services/${s.section}/${s.id}`} className="w-full">
+                    <Link
+                      to={`/services/${s.section}/${s.id}`}
+                      className="w-full"
+                    >
                       <Button
                         size="sm"
                         variant="secondary"
@@ -356,4 +364,9 @@ export default function ServicesIndex() {
     </main>
   );
 }
-export { designedProjects, procurementServices, constructionServices, operationServices };
+export {
+  designedProjects,
+  procurementServices,
+  constructionServices,
+  operationServices,
+};
