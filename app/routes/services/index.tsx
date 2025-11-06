@@ -4,9 +4,9 @@ import { Link } from "react-router";
 
 const sectionMeta = {
   "engineering-design": { title: "Engineering Design", bg: "bg-muted" },
-  procurement: { title: "Procurement Management", bg: "bg-background" },
-  construction: { title: "Construction Services", bg: "bg-muted" },
-  operations: { title: "Operation & Maintenance", bg: "bg-background" },
+  "procurement-management": { title: "Procurement Management", bg: "bg-background" },
+  "construction-services": { title: "Construction Services", bg: "bg-muted" },
+  "operations-&-maintainance": { title: "Operation & Maintenance", bg: "bg-background" },
 } as const;
 
 /*  your original data  */
