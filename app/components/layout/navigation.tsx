@@ -11,7 +11,7 @@ export function Navigation() {
 
   const servicesDropdown = [
   { href: "/services/engineering-design",      label: "Engineering Design" },
-  { href: "/services/procurement",  label: "Procurement Management" },
+  { href: "/services/procurement-management",  label: "Procurement Management" },
   { href: "/services/construction-services",   label: "Construction Services" },
   { href: "/services/operations-&-maintainance",  label: "Operations & Maintenance" },
 ];

@@ -22,7 +22,7 @@ const designedProjects = [
     year: "2023",
     description:
       "Complete EPCM services for a world-class petrochemical complex expansion including new production units, utilities, and infrastructure.",
-    image: "3d-engineering-design.png",
+    image: ["3d-engineering-design.png"],
     services: ["Engineering", "Procurement", "Construction", "Commissioning"],
     highlights: [
       "Zero lost-time incidents over 48 months",
