@@ -31,7 +31,7 @@ const details: Record<string, Project> = {
     value: "₦3M",
     scope: "Complete EPC services for a world-class petrochemical complex expansion including new production units, utilities, and infrastructure.",
     completed: "2021",
-    images: ["/igando.png"],
+    images: ["/mushin.png"],
     services: ["Engineering", "Procurement", "Construction", "Commissioning"],
     highlights: [
       "Zero lost-time incidents over 8 months",
@@ -40,14 +40,14 @@ const details: Record<string, Project> = {
       "Environmental compliance exceeded targets",
     ],
   },
-  "petrosafe-underground-lpg-tank-construction": {
-    title: "Petrosafe Underground LPG Tank Construction",
+  "petrosafe-underground-lpg-tank-installation": {
+    title: "Petrosafe Underground LPG Tank Installation",
     location: "Lagos, Nigeria",
     client: "Petrosafe",
     value: "₦240M",
     scope: "Engineering and construction management for a 500 MW offshore wind farm including turbine installation and grid connection.",
     completed: "2023",
-    images: ["/petrosafe.png"],
+    images: ["/industryImg.png"],
     services: ["Engineering", "Construction Management", "Operations Support"],
     highlights: [
       "500 MW renewable energy capacity",
@@ -63,7 +63,7 @@ const details: Record<string, Project> = {
     value: "₦3.2B",
     scope: "Full EPC delivery of a liquefied natural gas processing facility with capacity of 35M litres.",
     completed: "2022",
-    images: ["/mushin.png"],
+    images: ["/petrosafe.png"],
     services: ["Engineering", "Procurement", "Construction", "Operations"],
     highlights: [
       "Advanced modular construction approach",
