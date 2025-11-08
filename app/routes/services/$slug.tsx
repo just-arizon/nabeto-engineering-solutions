@@ -22,9 +22,7 @@ const pool = [
 ].map((s) => ({
   ...s,
   // guard: always give an images array
-  images: Array.isArray((s as any).images) && (s as any).images.length
-            ? (s as any).images
-            : [s.image ?? "/placeholder.svg"],
+   images: Array.isArray(s.image) && s.image.length ? s.image : ["/placeholder.svg"],
 }));
 
 const titles: Record<string, string> = {
@@ -174,7 +172,7 @@ function ImageCarousel({ images }: { images: string[] }) {
   const prev = () => setIdx((i) => (i - 1 + images.length) % images.length);
 
   return (
-    <div className="relative aspect-[16/9] bg-black">
+    <div className="relative h-80 bg-black">
       <AnimatePresence mode="wait">
         <motion.img
           key={idx}
