@@ -149,13 +149,13 @@ export default function ServiceSectionIndex() {
                     <Badge key={s} variant="secondary">{s}</Badge>
                   ))}
                 </div>
-
+{/* 
                 <div className="flex gap-3 pt-2">
                   <Button asChild>
                     <Link to={`/projects/${active.slug}`}>Full Details →</Link>
                   </Button>
                   <Button variant="outline" onClick={() => setOpen(null)}>Close</Button>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </motion.div>

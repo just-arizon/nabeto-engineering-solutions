@@ -402,12 +402,12 @@ export default function ServicesIndex() {
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-2">
+                {/* <div className="flex gap-3 pt-2">
                   <Button asChild>
                     <Link to={`/projects/${active.slug}`}>Full Details →</Link>
                   </Button>
                   <Button variant="outline" onClick={() => setOpen(null)}>Close</Button>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </motion.div>
@@ -424,7 +424,7 @@ function ImageCarousel({ images }: { images: string[] }) {
   const prev = () => setIdx((i) => (i - 1 + images.length) % images.length);
 
   return (
-    <div className="relative aspect-[16/9] bg-black">
+    <div className="relative h-96 bg-black">
       <AnimatePresence mode="wait">
         <motion.img
           key={idx}
